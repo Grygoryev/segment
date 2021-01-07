@@ -1,0 +1,51 @@
+.intro-manufacture {
+
+    &__content
+    {
+        p
+        {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+ 
+    &__video 
+    {
+        margin-bottom: 10px;
+        
+        .mintablet({
+            width: 100%;
+            max-width: 350px;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+
+            iframe 
+            {
+                min-height: 200px;
+            }
+        });
+
+        .mindesktop-sm({
+            max-width: 525px;
+            margin-right: 50px;
+            margin-bottom: 40px;
+
+            iframe 
+            {
+                min-height: 290px;
+            }
+        });
+
+        .mindesktop({
+            max-width: 675px;
+            margin-right: 50px;
+            margin-bottom: 40px;
+
+            iframe 
+            {
+                min-height: 420px;
+            }
+        });
+    }
+}

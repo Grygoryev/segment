@@ -1,0 +1,84 @@
+.contacts {
+  margin-bottom: 30px;
+
+  &__description
+  {
+    color: #5C6163;
+    font-family: @font-roboto-light;
+    .font(14px, 24px);
+    margin-bottom: 20px;
+
+    .minmablet({
+      .font(16px, 30px);
+      margin-bottom: 30px;
+    });
+  }
+
+  &__content
+  {
+    .minmablet({
+      .flex(space-between, flex-start, row nowrap);
+    });
+  }
+
+  &__section
+  {
+    .minmablet({
+      width: 50%;
+    })
+  }
+
+  &__map
+  {
+    iframe
+    {
+      width: 100%;
+      max-height: 400px;
+      max-width: 705px;
+      height: 400px;
+      border: none;
+      border-radius: 20px;
+    }
+  }
+}
+
+.contacts-section {
+  padding-right: 30px;
+  margin-bottom: 30px;
+
+  &__title
+  {
+    color: @color-ocean;
+    .font(16px, 22px);
+    font-family: @font-roboto-medium;
+    margin-bottom: 12px;
+
+    .minmablet({
+      .font(20px, 25px);
+    });
+  }
+
+  &__container
+  {
+    .flex(space-between, flex-start);
+  }
+
+  &__item
+  {
+    .flex(flex-start, flex-start, row nowrap);
+
+    p
+    {
+      color: #5B6164;
+      font-family: @font-roboto-light;
+      .font(16px, 26px);
+    }
+
+    svg
+    {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+}

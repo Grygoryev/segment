@@ -1,0 +1,67 @@
+.quiz-progress-bar {
+    .flex(space-between, center, row nowrap);
+    margin-bottom: 10px;
+
+    .mintablet({
+        margin-bottom: 30px;
+    });
+
+    &__title 
+    {
+        flex-shrink: 0;
+        margin-right: 10px;
+        font-style: italic;
+    }
+
+    &__bar 
+    {
+        border-radius: 15px;
+        height: 7px;
+        width: 100%;
+        background-color: rgba(#565656, 0.3);
+        position: relative;
+    }
+
+    &__bar-fullfilment
+    {
+        width: 18%;
+        background-color: @color-ocean;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 15px;
+
+        &.--step1 
+        {
+            width: 16%;
+        }
+
+        &.--step2
+        {
+            width: 32%;
+        }
+
+        &.--step3
+        {
+            width: 48%;
+        }
+        
+        &.--step4
+        {
+            width: 64%;
+        }
+        
+        &.--step5
+        {
+            width: 82%;
+        }
+        
+        &.--step6
+        {
+            width: 100%;
+        }
+
+    }
+
+}

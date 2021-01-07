@@ -1,0 +1,31 @@
+header.header.box#header
+    .header__line.--top
+        .header__container.box__container
+            a(href="/").header__logo
+                svg
+                    use(xlink:href="#icon-logo-white" href="#icon-logo-white")
+            .header__feedback
+
+                .header__text Отвечаем в
+                .social-links.header__social-links
+                    svg.soc-link
+                        use(xlink:href="#icon-telegram" href="#icon-telegram") 
+                    svg.soc-link
+                        use(xlink:href="#icon-whatsapp" href="#icon-whatsapp") 
+                    svg.soc-link
+                        use(xlink:href="#icon-viber" href="#icon-viber") 
+                .header__text +375 29 625-21-03
+                .header__btn.btn.--call
+                    .btn__title Заказать звонок
+                .header__btn.btn
+                    .btn__title Узнать стоимость
+            .header__menu-btn-box#mobile-menu-btn
+                p Меню
+                .header__menu-btn
+                    span 
+                    span
+                    span
+    .header__line.--nav
+        .header__nav-container.box__container
+            include nav.pug
+            

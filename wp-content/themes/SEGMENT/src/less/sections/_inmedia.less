@@ -1,0 +1,129 @@
+.inmedia {
+    color: #5C6163;
+    font-family: @font-roboto-light;
+    margin-bottom: 40px;
+
+    .mindesktop({
+        .font(16px, 30px);
+    });
+
+    &__list 
+    {
+        .mintablet({
+            .flex(space-between, stretch);
+        });
+    }
+}
+
+.inmedia-item {
+    .flex(flex-start, flex-start, column nowrap);
+    box-shadow: 0px 0px 50px rgba(22, 33, 35, 0.07);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 auto 30px;
+    transition: 300ms all;
+
+    &:hover
+    {
+        box-shadow: 0px 0px 50px rgba(22, 33, 35, 0.17);
+    }
+
+    .mintablet({
+        width: 49%;
+    });
+
+    .minmablet({
+        .flex(space-between, center, row nowrap);
+        padding: 30px;
+        width: 100%;
+    });
+
+    .mindesktop-sm({
+        padding: 45px
+    });
+
+    &__section
+    {
+        height: 100%;
+
+        .minmablet({
+            width: 50%;
+        });
+        
+        &.--content
+        {
+            order: 2;
+            .flex_column();
+
+            .minmablet({
+                order: 1;
+            });
+        }
+
+        &.--img
+        {
+            order: 1;
+            margin-bottom: 10px;
+
+            img
+            {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+
+            .minmablet({
+                order: 2;
+                max-width: 400px;
+            });
+
+            .mindesktop-sm({
+                max-width: 454px;
+                width: 100%;
+                height: 300px;
+            });
+
+            .mindesktop({
+                max-width: 594px;
+                width: 100%;
+                height: 300px; 
+            });
+        }
+    }
+ 
+    &__title 
+    {
+        .font(16px, 20px);
+        font-family: @font-roboto-bold;
+        color: @color-ocean;
+        margin-bottom: 24px;
+
+        .mindesktop-sm({
+            .font(22px, 30px);
+            width: 80%;
+        });
+    }
+
+    &__description
+    {
+        .font(14px, 20px);
+        color: #5C6163;
+        margin-bottom: 25px;
+
+        .mindesktop-sm({
+            .font(16px, 24px);
+            margin-bottom: 35px;
+        });
+    }
+
+    &__btn-learn-more
+    {
+        margin-top: auto;
+
+        .mindesktop-sm({
+            margin-top: 0;
+            margin-left: 0;
+        });
+    }
+}

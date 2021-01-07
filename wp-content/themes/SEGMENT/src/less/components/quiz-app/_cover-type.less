@@ -1,0 +1,48 @@
+.cover-type {
+
+  &__option-title
+  {
+    .font(24px, 32px);
+    font-family: @font-roboto-bold;
+    color: @color-ocean;
+    margin-bottom: 15px;
+
+    .mintablet({
+      .font(28px, 36px);
+    });
+
+    span
+    {
+      color: @color-black;
+      font-family: @font-roboto-regular;
+    }
+  }
+
+  &__macro-option 
+  {
+    margin-bottom: 20px;
+  }
+
+  &__micro-options
+  {
+    justify-content: center;
+  }
+  
+  &__micro-option
+  {
+    .mintablet({
+      width: 17%;
+      margin-left: 10px;
+      margin-right: 10px;
+    });
+
+    img 
+    {
+      border-radius: 50%;
+
+      .mintablet({
+        max-width: 50%;
+      });
+    }
+  }
+}

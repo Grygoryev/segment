@@ -1,0 +1,123 @@
+.send-data {
+
+  &__title
+  {
+    .font(18px, 1.1);
+    color: @color-ocean;
+    font-family: @font-roboto-bold;
+    text-align: left;
+    margin-bottom: 15px;
+
+    span
+    {
+      font-family: @font-roboto-regular;
+      color: @color-black;
+    }
+  }
+
+  &__inputs
+  {
+    .mintablet({
+      .flex(space-between, flex-start, column nowrap);
+    });
+
+    .mindesktop-sm({
+      .flex(space-between, flex-start, row wrap);
+    });
+  }
+
+  &__input-box
+  {
+    margin-bottom: 15px;
+    .flex_column();
+    align-items: flex-start;
+
+    .mintablet({
+      width: 45%;
+    });
+
+    p
+    {
+      margin-bottom: 5px;
+    }
+
+    textarea
+    {
+      width: 100%;
+    }
+  }
+
+  &__privacy-text
+  {
+    .mintablet({
+      .flex(flex-start);
+    });
+  }
+
+  &__gift-suptitle
+  {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  &__gift-box
+  {
+    margin-bottom: 15px;
+  }
+
+  &__gift
+  {
+    .flex(flex-start, center, row nowrap);
+  }
+
+  &__gift-img
+  {
+    max-width: 100px;
+
+    img
+    {
+      width: 100%;
+    }
+  }
+
+
+  &__gift-title
+  {
+    text-align: left;
+    color: @color-ocean;
+    .font(18px, 1.4);
+    font-family: @font-roboto-bold;
+    margin-bottom: 15px;
+
+    span
+    {
+      color: @color-black;
+      font-family: @font-roboto-regular;
+    }
+  }
+
+  &__gift-img
+  {
+    text-align: left;
+  }
+
+  &__privacy-agreement
+  {
+    .flex(flex-start, flex-start, row nowrap);
+    .font(12px, 1.2);
+    color: @color-black;
+    text-align: left;
+    margin-bottom: 15px;
+
+    input
+    {
+      margin-right: 10px;
+    }
+
+    a
+    {
+      color: @color-ocean;
+      border-bottom: 1px dashed @color-ocean;
+    }
+  }
+}

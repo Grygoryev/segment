@@ -1,0 +1,76 @@
+.weekdays {
+    margin-bottom: 40px;
+
+    .mindesktop-sm({
+        margin-bottom: 60px;
+    });
+
+    .title-box
+    {
+        .mindesktop-sm({
+            padding-top: 20px;
+        });
+    }
+
+    &__title
+    {
+
+    }
+
+    &__items
+    {
+        .mintablet({
+            .flex(space-between, stretch);
+        });
+    }
+}
+
+.weekday-activity {
+    box-shadow: 0px 0px 50px rgba(22, 33, 35, 0.07);
+    border-radius: 20px;
+    margin-bottom: 30px;
+
+    .mintablet({
+        width: 48%;
+    });
+
+    .mindesktop-sm({
+        width: 32%;
+    });
+
+    &__img 
+    {
+        width: 100%;
+    }
+
+    &__title 
+    {
+        padding: 20px;
+        .font(15px, 20px);
+        color: @color-ocean;
+        text-align: center;
+
+        .mintablet({
+            padding: 20px;
+        });
+
+        .mindesktop-sm({
+            padding: 20px;
+            .font(20px, 30px);
+        })
+    }
+
+    &__description
+    {
+        padding: 22px;
+        .font(14px, 22px);
+        font-family: @font-roboto-light;
+        color: #5C6163;
+        text-align: center;
+
+        .mindesktop-sm({
+            .font(18px, 26px);
+            padding: 25px 30px;
+        });
+    }
+}

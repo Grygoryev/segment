@@ -1,0 +1,56 @@
+.final {
+
+  &__title
+  {
+    .font(22px, 1.2);
+    color: @color-ocean;
+    font-family: @font-roboto-bold;
+    margin-bottom: 15px;
+
+    span
+    {
+      color: @color-black;
+      font-family: @font-roboto-medium;
+    }
+  }
+
+  &__pic
+  {
+    margin-bottom: 20px;
+
+    img
+    {
+      width: 100%;
+      max-width: 100px;
+    }
+  }
+
+  &__description
+  {
+    text-align: center;
+    .font(16px, 1.4);
+
+    .mindesktop-sm({
+      margin-bottom: 30px;
+    });
+
+    p
+    {
+      margin-bottom: 15px;
+    }
+
+    a
+    {
+      color: @color-ocean;
+      font-family: @font-roboto-medium;
+      border-bottom: 1px dashed @color-ocean;
+    }
+  }
+
+  .btn
+  {
+    .mintablet({
+      margin-left: 0;
+    });
+  }
+}

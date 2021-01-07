@@ -1,0 +1,41 @@
+.preparing {
+
+  &__container
+  {
+    .mintablet({
+      .flex(flex-start, center);
+    });
+  }
+
+  &__img-box
+  {
+    text-align: center;
+
+    img
+    {
+      width: 100%;
+    }
+
+    .mintablet({
+      width: 60%;
+    });
+  }
+
+  &__input-box
+  {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    input
+    {
+      margin-right: 15px;
+    }
+  }
+
+  &__inputs
+  {
+    .flex_column();
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+}

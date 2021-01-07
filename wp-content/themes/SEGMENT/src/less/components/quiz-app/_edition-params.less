@@ -1,0 +1,60 @@
+.edition-params {
+
+
+  &__container
+  {
+    .mintablet({
+      .flex(center, center, row nowrap);
+      margin-bottom: 20px;
+    });
+  }
+    
+  &__options
+  {
+    margin: 0 auto 15px;
+    max-width: 70%;
+
+    .mintablet({
+      max-width: 50%;
+      margin-left: 0;
+      margin-right: 0;
+    })
+  }
+
+  &__img 
+  {
+    margin-bottom: 10px;
+
+    .mintablet({
+      max-width: 40%;
+    });
+  }
+
+  &__section 
+  {
+    margin-bottom: 15px;
+
+    input
+    {
+      width: 60%;
+    }
+
+    p 
+    {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input-box
+  {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+    .mintablet({
+      margin-left: 0;
+      justify-content: flex-start;
+    });
+  }
+}

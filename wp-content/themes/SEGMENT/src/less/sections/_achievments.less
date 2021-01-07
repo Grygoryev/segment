@@ -1,0 +1,46 @@
+.achievments {
+
+    &__list
+    {
+        .mintablet({
+            .flex(space-between, stretch, row wrap);
+        });
+    }
+}
+
+.achievment {
+    .mintablet({
+        width: 48%;     
+    });
+
+    &__title 
+    {
+        .font(18px, 25px);
+        font-family: @font-roboto-regular;
+        color: @color-ocean;
+        margin-bottom: 33px;
+
+        .mindesktop-sm({
+            margin-bottom: 33px;
+            .font(22px, 30px);
+        });
+    }
+
+    &__img-box
+    {
+        height: 250px;
+        margin-bottom: 20px;
+
+        .mindesktop({
+            height: 400px;
+        });
+        
+        img 
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+}

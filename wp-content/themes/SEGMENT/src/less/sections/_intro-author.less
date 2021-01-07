@@ -1,0 +1,113 @@
+@keyframes btn-blick {
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    30%
+    {
+        transform: translateX(180%);
+    }
+    100%
+    {
+        transform: translateX(180%);
+    }
+}
+
+.intro--author {
+
+    .intro {
+
+        &__img
+        {
+            .minmablet({
+               max-width: 35%;
+            });
+        }
+
+        &__text-info
+        {
+            .minmablet({
+                max-width: 65%;
+            });
+        }
+
+        &__btn-learn-more
+        {
+            background-color: rgba(@color-grey, 0.03);
+            border: 1px solid @color-red;
+            flex-shrink: 0;
+
+            .btn__title
+            {
+                color: @color-red;
+            }
+        }
+
+        &__btn-box
+        {
+            position: relative;
+
+            .minmablet({
+                margin-right: 30px;
+            });
+
+            &.--calculate
+            {
+                overflow: hidden;
+
+                &::after
+                {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 140px;
+                    height: 70px;
+                    background: linear-gradient(to left, transparent, rgba(@color-white, 0.5), transparent);
+                    transform: translate(-100%);
+                    animation: btn-blick 4s ease-in infinite;
+                }
+            }
+        }
+
+        &__buttons {
+            .btn {
+                max-width: 220px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .minmablet({
+                .flex(flex-start, flex-start, row nowrap);
+            });
+        }
+
+        &__btn-signtature
+        {
+            .font(15px, 1.2);
+            position: relative;
+            display: none;
+
+            .minmablet({
+                display: block;
+            });
+
+            &::after
+            {
+                content: '';
+                background: url('../img/arrow.png') no-repeat;
+                background-size: contain;
+                transform: scaleX(-1);
+                position: absolute;
+                width: 33px;
+                height: 60px;
+                top: -40px;
+                left: -50px;
+            }
+
+            span {
+                color: @color-red;
+            }
+        }
+    }
+}

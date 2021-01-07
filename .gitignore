@@ -1,0 +1,14 @@
+/*
+
+!/wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/SEGMENT/
+wp-content/themes/SEGMENT/.idea/
+wp-content/themes/SEGMENT/html
+
+!gulpfile.js
+!webpack.config.js
+!settings.js
+!package.json

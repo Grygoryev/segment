@@ -1,0 +1,72 @@
+.portfolio {
+
+  &__title
+  {
+    color: @color-ocean;
+    .font(35px, 49px);
+    font-family: @font-roboto-bold;
+
+    .minmablet({
+      .font(45px, 69px);
+    })
+  }
+
+  &__description
+  {
+    margin-bottom: 20px;
+    color: #5C6163;
+    .font(16px, 30px);
+    font-family: @font-roboto-light;
+  }
+
+  &__items
+  {
+    .flex(space-between, flex-start, row wrap);
+  }
+}
+
+.portfolio-board {
+
+  &__items
+  {
+    .flex(space-between, flex-start, row wrap);
+  }
+}
+
+.portfolio-item {
+  box-shadow: 0 0 50px rgba(22, 33, 35, 0.07);
+  border-radius: 0 0 20px 20px;
+  width: 31%;
+  cursor: pointer;
+  transition: 300ms all;
+
+  &:hover
+  {
+    box-shadow: 0 0 60px rgba(22, 33, 35, 0.17);
+  }
+
+  img
+  {
+    width: 100%;
+  }
+
+  &__title
+  {
+    .font(22px, 32px);
+    color: @color-ocean;
+    font-family: @font-roboto-medium;
+    text-align: center;
+  }
+
+  &__description
+  {
+    text-align: center;
+    font-family: @font-roboto-light;
+    .font(16px, 18px);
+  }
+
+  &__footer
+  {
+    padding: 17px 0 25px;
+  }
+}

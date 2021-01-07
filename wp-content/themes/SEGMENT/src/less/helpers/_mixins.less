@@ -1,0 +1,80 @@
+.respond-min(@width) {
+  @media (min-width: @width) {
+    @content();
+  }
+}
+
+.flex(@jc: space-between, @ai: center, @ff: row wrap) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-flow: @ff;
+}
+
+.inline-flex(@jc: space-between, @ai: center, @ff: row wrap) {
+  display: inline-flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-flow: @ff;
+}
+
+.font(@fs: 16px, @lh: 1.2) {
+  font-size: @fs;
+  line-height: @lh;
+}
+
+.padding_on_side() {
+  padding: 0 13px;
+}
+
+.flex_column() {
+  display: flex;
+  flex-direction: column;
+}
+
+//media-queries
+
+.min-mob-xs(@rules) {
+  @media(min-width: @mobile-extra-small) {
+    @rules();
+  }
+}
+
+.min-mob-s(@rules) {
+  @media(min-width: @mobile-small) {
+    @rules();
+  }
+}
+
+.min-mob(@rules) {
+ @media(min-width: @mobile) {
+   @rules();
+ }
+}
+
+.mintablet(@rules) {
+  @media(min-width: @tablet) {
+    @rules();
+  }
+}
+
+.minmablet(@rules) {
+  @media(min-width: @mablet) {
+    @rules();
+  }
+}
+
+.mindesktop(@rules) {
+  @media(min-width: @desktop) {
+    @rules();
+  }
+}
+
+.mindesktop-sm(@rules) {
+  @media (min-width: @desktop-small) {
+    @rules();
+  }
+}
+
+
+
