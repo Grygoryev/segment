@@ -8,7 +8,17 @@
       <p class="about__description">Издательский дом «Сегмент»  (ООО «Колорград») – это крупнейший в стране частный издательско-полиграфический комплекс, специализирующийся на издании книг малыми тиражами. Мы оказываем услуги полного цикла – от работы с текстом до изготовления книг.</p>
     </div>
     <div class="about__video about__section">
-      <iframe src="https://www.youtube.com/embed/tgg-CH7Dk-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="service service--1" href="">
+            <div class="service__body">
+                <div class="service__btn-learn-more btn">
+                    <div class="btn__title">Узнать больше</div>
+                </div>
+            </div>
+            <footer class="service__footer">
+                <div class="service__title">Книги «под ключ» о предприятиях</div>
+                <div class="service__description">Юбилейные, корпоративные и имиджевые издания.</div>
+            </footer>
+        </a>
     </div>
   </div>
 </section>

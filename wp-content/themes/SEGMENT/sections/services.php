@@ -4,7 +4,8 @@
       <div class="title-box__back">услуги</div>
       <h2 class="title-box__title">Услуги издательства:</h2>
     </div>
-    <div class="services-container"><a class="service service--1" href="">
+    <div class="services-container">
+        <a class="service service--1" href="">
         <div class="service__body">
           <div class="service__btn-learn-more btn">
             <div class="btn__title">Узнать больше</div>
@@ -13,7 +14,8 @@
         <footer class="service__footer">
           <div class="service__title">Книги «под ключ» о предприятиях</div>
           <div class="service__description">Юбилейные, корпоративные и имиджевые издания.</div>
-        </footer></a><a class="service service--2" href="">
+        </footer></a>
+        <a class="service service--2" href="">
         <div class="service__body">
           <div class="service__btn-learn-more btn">
             <div class="btn__title">Узнать больше</div>

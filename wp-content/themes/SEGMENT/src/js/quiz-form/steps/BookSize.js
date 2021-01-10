@@ -22,7 +22,6 @@ const BookSize = () => {
     }
 
     useEffect(() => {
-        console.log(data)
     }, [data])
 
     let setBookSize = (e) => {
