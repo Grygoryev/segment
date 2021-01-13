@@ -68,7 +68,7 @@ const PaperType = () => {
                 <div className="quiz__cards paper-type__cards">
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src="img/quiz/prepare_offset.png" className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/prepare_offset.png"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="offset" checked={data.paper_type == "offset"} onChange={handleChooze} />
@@ -77,7 +77,7 @@ const PaperType = () => {
                     </label>
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src="img/quiz/prepare_melovan.png" className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/prepare_melovan.png"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="melovan" checked={data.paper_type == "melovan"} onChange={handleChooze} />
@@ -86,7 +86,7 @@ const PaperType = () => {
                     </label>
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src="img/quiz/dontknow.svg" className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/dontknow.svg"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="unknown" checked={data.paper_type == "unknown"} onChange={handleChooze} />

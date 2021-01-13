@@ -22,21 +22,31 @@
         </div>
 
     <div class="team-board">
+
+
       <div class="team-board__tabs">
         <div class="team-board__tab --all --active">Наша команда</div>
-        <div class="team-board__tab">Специалисты по факсимиле и роскошному переплету</div>
-        <div class="team-board__tab">Мастера типографского дела</div>
-        <div class="team-board__tab">Вспомогательная служба</div>
-        <div class="team-board__tab" data-tag="business">Специалисты по созданию книг о предприятиях и книг о бизнес</div>
-        <div class="team-board__tab" data-tag="science">Специалисты по работе с авторами и учеными</div>
-        <div class="team-board__tab" data-tag="management">Руководство</div>
+	      <?php
+		      while(have_posts()){
+			      the_post();
+			      $tabs = get_field_object('team_departaments')['value'];
+
+			      foreach ($tabs as $tab) {
+          ?>
+                      <div class="team-board__tab" data-tag="<?php echo $tab?>">
+                        <?php echo $tab; ?>
+                      </div>
+
+         <?php
+			      }
+		      }
+	      ?>
       </div>
       <div class="team-board__members">
 
 	      <?php
           wp_reset_postdata();
 		      $workers = new WP_Query(array(
-			      'paged' => get_query_var('paged', 1),
                   'posts_per_page' => -1,
 			      'post_type' => 'worker',
 		      ));

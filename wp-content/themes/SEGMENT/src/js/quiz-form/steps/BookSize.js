@@ -82,7 +82,7 @@ const BookSize = () => {
                <div className="book-size__container">
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src="img/quiz/A.png" title="" alt="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A6" checked={data.book_size === 'A6'} name="book_size" onChange={setBookSize} />
@@ -91,7 +91,7 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src="img/quiz/A6.png" title="" alt="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/A6.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A5" name="book_size" onClick={setBookSize}/>
@@ -100,7 +100,7 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src="img/quiz/A4.png" title="" alt="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/A4.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" value="A4" name="book_size" onClick={setBookSize}/>
@@ -109,7 +109,7 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src="img/quiz/A.png" title="" alt="" />
+                            <img src={segmentData.rootUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" checked={data.book_size === 'custom' || customMode} onChange={() => setCustomMode(true)}/>

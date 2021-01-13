@@ -42,9 +42,16 @@
 				<div class="worker-about">
 					<div class="worker-about__title">Видео</div>
 					<div class="worker-about__videos">
-						<iframe src="https://www.youtube.com/embed/tgg-CH7Dk-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<iframe src="https://www.youtube.com/embed/tgg-CH7Dk-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
+                        <?php
+                            $worker_videos = get_field('worker_video');
+
+                            foreach ($worker_videos as $video) {
+                        ?>
+						    <iframe src="<?php echo $video['worker_video_link'] ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					    <?php
+					        }
+                        ?>
+                    </div>
 				</div>
 			</div>
 		</div>

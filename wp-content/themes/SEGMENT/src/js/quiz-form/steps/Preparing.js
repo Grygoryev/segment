@@ -40,7 +40,7 @@ const Preparing = () => {
             <form className="quiz__form preparing" onSubmit={handleSubmit}>
                 <div className="preparing__container">
                     <div className="preparing__img-box">
-                        <img src="img/quiz/prepare_common.png" alt=""/>
+                        <img src={segmentData.rootUrl + "/img/quiz/prepare_common.png"} alt=""/>
                     </div>
                     <fieldset className="preparing__inputs">
                         <label className="preparing__input-box">

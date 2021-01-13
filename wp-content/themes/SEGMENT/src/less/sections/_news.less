@@ -3,7 +3,7 @@
     &__list
     {
         .mintablet({
-            .flex(space-between, stretch, row wrap);
+            .flex(flex-start, stretch, row wrap);
         });
     }
 }
@@ -11,30 +11,54 @@
 .news-item {
     padding: 20px;
     background-color: @color-white;
-    box-shadow: 0px 0px 50px rgba(22, 33, 35, 0.07);
+    box-shadow: 0 0 50px rgba(22, 33, 35, 0.07);
     border-radius: 20px;
     transition: 300ms all;
     margin-bottom: 30px;
+    @marginRight: 17px;
+    .flex_column();
 
     &:hover
     {
-        box-shadow: 0px 0px 50px rgba(22, 33, 35, 0.17);
+        box-shadow: 0 0 50px rgba(22, 33, 35, 0.17);
         transform: translateY(-2px);
     }
 
-    .minmablet({
+    .mintablet({
         padding: 30px;
         width: 48%;
+        margin-right: @marginRight;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
     });
 
     .mindesktop-sm({
         padding: 35px;
         width: 32%;
+
+        &:nth-child(2n) {
+            margin-right: @marginRight;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
     });
 
     .mindesktop({
         padding: 40px;
         width: 24%;
+        margin-right: 20px;
+
+        &:nth-child(3n) {
+            margin-right: @marginRight;
+        }
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
     });
 
 
@@ -64,8 +88,47 @@
         font-family: @font-roboto-light;
         margin-bottom: 20px;
 
-        .mindesktop({
-
+        .minmablet({
+            height: 100%;
         });
+    }
+
+    &__item
+    {
+        margin-top: auto;
+    }
+}
+
+.news-article {
+    .minmablet({
+        .flex(space-between, flex-start, row nowrap);
+    });
+
+    &__section
+    {
+
+        &.--text
+        {
+            padding-left: 20px;
+            color: #5C6163;
+            .font(16px, 24px);
+
+            .minmablet({
+                width: 60%;
+            });
+        }
+
+        &.--img
+        {
+            .minmablet({
+                width: 40%;
+            });
+        }
+
+        img
+        {
+            width: 100%;
+            border-radius: 20px;
+        }
     }
 }

@@ -35,28 +35,25 @@
         });
     }
 
-    &__video {
-        iframe {
-            width: 100%;
-            max-width: 400px;
-            min-height: 195px;
-            border-radius: 20px;
+    .service
+    {
+        width: 100%;
 
-            .minmablet({
-                max-width: 673px;
-            });
+        &__body {
+            background-size: 120%;
 
-            .minmablet({
-                min-height: 278px;
-            });
+            &::after
+            {
+                opacity: 1;
+                background-color: rgba(@color-black, 0.3);
+            }
+        }
 
-            .mindesktop-sm({
-                min-height: 325px;
-            });
 
-            .mindesktop({
-                min-height: 370px;
-            })
+        &__btn-learn-more
+        {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

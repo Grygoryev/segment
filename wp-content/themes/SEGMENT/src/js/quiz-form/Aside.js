@@ -10,16 +10,16 @@ const Aside = () => {
 
     if (step === 7) {
         giftTitle = <p><span>Ваш</span> <br/> подарок:</p>
-        giftImg = <img src="img/quiz/ibsn.png" alt=""/>
+        giftImg = <img src={segmentData.rootUrl + "/img/quiz/ibsn.png"} alt=""/>
     } else {
         giftTitle = <p>По завершению формы <br/> вы получите:</p>
-        giftImg = <img src="img/quiz/gift-img.png" alt=""/>
+        giftImg = <img src={segmentData.rootUrl + "/img/quiz/gift-img.png"} alt=""/>
     }
 
     return (
         <React.Fragment>
           <aside className="quiz-aside">
-              <img src="img/quiz/director.png" alt=""/>
+              <img src={segmentData.rootUrl + "/img/quiz/director.png"} alt=""/>
               <h4>Дмитрий Сакович</h4>
               <p>
                   Директор издательского дома

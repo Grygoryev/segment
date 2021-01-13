@@ -87,7 +87,7 @@ const SendData = () => {
                         <div className="send-data__gift-suptitle">Ваш подарок:</div>
                         <div className="send-data__gift">
                             <div className="send-data__gift-img">
-                                <img src="img/quiz/ibsn.png" alt=""/>
+                                <img src={segmentData.rootUrl + "/img/quiz/ibsn.png"} alt=""/>
                             </div>
                             <h4 className="send-data__gift-title">Присвоение <br/> ISBN номера <span>вашей книге</span></h4>
                         </div>

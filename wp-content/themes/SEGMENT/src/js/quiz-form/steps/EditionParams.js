@@ -35,7 +35,7 @@ const EditionParams = () => {
             </header>
             <form className="quiz__form edition-params" onSubmit={handleSubmit}>
                 <div className="edition-params__container">
-                    <img className="edition-params__img" src="img/quiz/your_book.png"/>
+                    <img className="edition-params__img" src={segmentData.rootUrl + "/img/quiz/your_book.png"}/>
                     <div className="edition-params__options">
                         <div className="edition-params__section">
                             <p>Сколько страниц будет в книге</p>

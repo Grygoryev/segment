@@ -21,7 +21,7 @@
 
   &__items
   {
-    .flex(space-between, flex-start, row wrap);
+    .flex(space-between, stretch, row wrap);
   }
 }
 
@@ -29,7 +29,7 @@
 
   &__items
   {
-    .flex(space-between, flex-start, row wrap);
+    .flex(flex-start, stretch, row wrap);
   }
 }
 
@@ -40,9 +40,18 @@
   cursor: pointer;
   transition: 300ms all;
 
+  .mintablet({
+    margin-right: 20px;
+  });
+
   &:hover
   {
     box-shadow: 0 0 60px rgba(22, 33, 35, 0.17);
+  }
+
+  &.--hidden
+  {
+    display: none;
   }
 
   img
@@ -68,5 +77,102 @@
   &__footer
   {
     padding: 17px 0 25px;
+  }
+}
+
+.portfolio-info {
+  margin-bottom: 25px;
+
+  .minmablet({
+    .flex(space-between, flex-start, row nowrap);
+  });
+
+  img
+  {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  &__section
+  {
+    .minmablet({
+      width: 45%;
+    });
+
+    &.--info
+    {
+      padding-top: 20px;
+
+      .minmablet({
+        padding-top: 0;
+      });
+    }
+  }
+
+  &__title
+  {
+    margin-bottom: 10px;
+    color: @color-ocean;
+    .font(16px, 20px);
+    font-family: @font-roboto-bold;
+
+    .minmablet({
+      margin-bottom: 15px;
+    });
+  }
+
+  &__book-techs
+  {
+    .tr
+    {
+      .flex(flex-start, flex-start, row nowrap);
+      border: 1px solid rgba(@color-grey, 0.2);
+      padding: 0 10px;
+      margin-bottom: 4px;
+
+      &__title
+      {
+        font-family: @font-roboto-bold;
+        color: rgba(@color-grey, 0.7);
+        border-right: 1px solid rgba(@color-grey, 0.2);
+        padding-right: 15px;
+        min-width: 30%;
+      }
+    }
+
+    .td
+    {
+      padding: 10px;
+    }
+  }
+}
+
+.portfolio-description {
+  margin-bottom: 20px;
+
+  .minmablet({
+    margin-bottom: 40px;
+  });
+
+  &__title
+  {
+    margin-bottom: 10px;
+    color: @color-ocean;
+    .font(20px, 24px);
+    font-family: @font-roboto-bold;
+  }
+
+  p
+  {
+    line-height: 1.4;
+  }
+
+  ul
+  {
+  }
+
+  li
+  {
+    padding-left: 20px;
   }
 }
