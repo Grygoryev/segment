@@ -8,11 +8,11 @@ const SendData = () => {
     let handleSubmit = (e) => {
         e.preventDefault();
 
-        let post = JSON.stringify(data)
+        let data = JSON.stringify(data)
 
-        fetch('../mail.php', {
+        let post = fetch(segmentData.rootUrl +'/mail.php', {
             method: 'POST',
-            body: post
+            body: data
         })
 
         setStep(7)

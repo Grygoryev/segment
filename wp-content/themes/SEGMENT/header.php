@@ -1,15 +1,23 @@
 <!DOCTYPE html>
+<html
+    <?php if (is_singular('smi') || is_page('izdat-knigu')) {
+    ?>
+      style="height: 100%"
+    <?php
+    }?>
+>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/png" href="/img/icon-logo.svg">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <?php wp_head(); ?>
 </head>
 
 <body class="
     <?php
-       if (is_front_page()) {
+       if (is_front_page() || is_page('pechat-knig') || is_singular('service')) {
     ?>
     <?php } else { ?>
     common-body

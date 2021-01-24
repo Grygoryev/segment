@@ -3,8 +3,6 @@ import StateContextProvider from "./contexts/stateContext"
 import {render} from 'react-dom'
 import Main from './Main'
 
-
-
 function App() {
     return (
         <StateContextProvider>

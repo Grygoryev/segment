@@ -22,7 +22,7 @@
 					while($news->have_posts()) {
 						$news-> the_post();
 						get_template_part('template-parts/news-item');
-						?>
+                    ?>
 
 					<?php }
 					wp_reset_postdata();

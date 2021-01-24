@@ -1,4 +1,4 @@
-<section class="quiz-form box">
+<section id="quiz-form" <?php body_class( 'quiz-form box' ); ?>>
   <div class="quiz-form__container box__container">
     <div class="quiz-form__title"><span>Рассчитайте стоимость</span> своей книги</div>
     <div class="quiz-form__subtitle">Ответив на 5 вопросов, <span>вы получите:</span></div>

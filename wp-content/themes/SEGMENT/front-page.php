@@ -5,5 +5,5 @@
 	include get_theme_file_path('./sections/services.php');
 	include get_theme_file_path('./sections/advantages.php');
 	include get_theme_file_path('./components/quiz-form.php');
-	include get_theme_file_path('./sections/feedbacks.php');
+	include get_theme_file_path('./sections/clients.php');
 	get_footer();

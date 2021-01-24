@@ -18,27 +18,42 @@
                 </div>
                 <?php
                     $data = get_field('portfolio_book_data');
+
+
                 ?>
                 <div class="portfolio-info__section --info">
                     <div class="portfolio-info__author-n-year portfolio-info__title">
                         <?php
-                             echo $data[0]['portfolio_book_author'] . ', ';
-                             echo $data[0]['portfolio_book_year'];
+                             echo get_field('portfolio_book_author') . ', ';
+                             echo get_field('portfolio_book_year');
                         ?>
                     </div>
 
                     <div class="portfolio-info__book-techs">
-                        <h4 class="portfolio-info__title">Вид издания</h4>
+                    <?php
+                        $data = get_field('portfolio_book_data2');
+
+                        foreach ($data as $item) {
+                    ?>
+
+                        <h4 class="portfolio-info__title">
+                          <?php echo $item['portfolio_data2_block_title']; ?>
+                        </h4>
+
                         <div class="table">
-                            <div class="tr">
-                                <div class="td tr__title">Формат:</div>
-                                <div class="td"><?php echo $data[0]['portfolio_book_format']; ?></div>
-                            </div>
-                            <div class="tr">
-                                <div class="td tr__title">Переплёт:</div>
-                                <div class="td"><?php echo $data[0]['portfolio_book_cover']; ?></div>
-                            </div>
-                        </div>
+                        <?php
+                            $section = $item['portfolio_data2_section'];
+
+                            foreach ($section as $tr) {
+                          ?>
+                                <div class="tr">
+                                    <div class="td tr__title"><?php echo $tr['portfolio_data2_td_name']; ?></div>
+                                    <div class="td"><?php echo $tr['portfolio_data2_td_value']; ?></div>
+                                </div>
+                            <?php }?>
+                                </div>
+                    <?php }
+                    ?>
                     </div>
                 </div>
             </div>

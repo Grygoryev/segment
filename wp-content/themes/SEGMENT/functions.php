@@ -113,7 +113,54 @@ function segment_post_types() {
 		],
 		'menu_icon' => 'dashicons-format-gallery'
 	]);
+
+	register_post_type('smi', [
+		'supports' => ['title', 'editor', 'thumbnail'],
+//	  'rewrite' => ['slug' => 'team'],
+//    'has_archive' => true,
+		'public' => true,
+		'hierarchical' => true,
+		'exclude_from_search' => false,
+		'labels' => [
+			'name' => 'СМИ О НАС',
+			'add_new' => 'Добавить информацию',
+			'edit_item' => 'Редактировать',
+			'all_items' => 'Все экземпляры',
+			'singular_name' => 'СМИ_О_НАС'
+		],
+		'menu_icon' => 'dashicons-media-spreadsheet'
+	]);
+
+	register_post_type('service', [
+		'supports' => ['title', 'editor', 'thumbnail'],
+//	  'rewrite' => ['slug' => 'team'],
+//    'has_archive' => true,
+		'public' => true,
+		'taxonomies' => ['category'],
+		'hierarchical' => true,
+		'exclude_from_search' => false,
+		'labels' => [
+			'name' => 'Услуги',
+			'add_new' => 'Добавить услугу',
+			'edit_item' => 'Редактировать',
+			'all_items' => 'Все экземпляры',
+			'singular_name' => 'Услуги'
+		],
+		'menu_icon' => 'dashicons-screenoptions'
+	]);
+
 }
 
 add_action('init', 'segment_post_types');
 add_action('after_setup_theme', 'segment_features');
+
+	if( function_exists('acf_add_options_page') ) {
+
+		acf_add_options_page(array(
+			'page_title' => 'Контакты',
+			'menu_title' => 'Контакты',
+			'menu_slug' => 'theme-general-settings',
+			'capability' => 'edit_posts',
+			'redirect' => false
+		));
+	}

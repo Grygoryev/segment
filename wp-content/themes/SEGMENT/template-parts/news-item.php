@@ -3,11 +3,11 @@
         class="news-item__img"
         src="<?php echo get_the_post_thumbnail_url(); ?>"
         alt="<?php the_title(); ?>">
-    <h4 class="news-item__title">
+    <a href="<?php the_permalink(); ?>" class="news-item__title">
       <?php the_title(); ?>
-    </h4>
+    <a/>
     <div class="news-item__description">
-        <?php the_content(); ?>
+	    <?php echo get_field('news_short_description'); ?>
     </div>
     <a href="<?php the_permalink(); ?>" class="news-item__btn-learn-more btn">
         <div class="btn__title">Узнать больше</div>

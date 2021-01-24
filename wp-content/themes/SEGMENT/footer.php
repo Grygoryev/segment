@@ -36,31 +36,31 @@
           <svg>
             <use xlink:href="#icon-geopin" href="#icon-geopin"></use>
           </svg>
-          <p>Республика Беларусь, г. Минск, пер. Велосипедный, д. 5, оф. 904, 9 этаж (здание ОАО «Беллифт»)</p>
+          <p><?php echo get_field('contacts_work_time','option'); ?></p>
         </div>
         <div class="footer__contact-line">
           <svg>
             <use xlink:href="#icon-phone" href="#icon-phone"></use>
           </svg>
-          <p>+375 17 361-91-40</p>
+          <p><?php echo get_field('contacts_phone','option'); ?></p>
         </div>
         <div class="footer__contact-line">
           <svg>
             <use xlink:href="#icon-smartphone" href="#icon-smartphone"></use>
           </svg>
-          <p>+375 29 625-21-03</p>
+          <p><?php echo get_field('contacts_mobile','option'); ?></p>
         </div>
         <div class="footer__contact-line">
           <svg>
             <use xlink:href="#icon-fax" href="#icon-fax"></use>
           </svg>
-          <p>+375 17 352-21-35</p>
+          <p><?php echo get_field('contacts_fax','option'); ?></p>
         </div>
         <div class="footer__contact-line">
           <svg>
             <use xlink:href="#icon-mail" href="#icon-mail"></use>
           </svg>
-          <p>info@segment.by</p>
+          <p><?php echo get_field('contacts_email','option'); ?></p>
         </div>
       </div>
       <div class="footer__section">

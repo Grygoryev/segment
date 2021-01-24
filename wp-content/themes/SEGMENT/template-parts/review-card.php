@@ -15,6 +15,6 @@
             </a>
 		</div>
 	</div>
-	<div class="feedback-card__title"><?php echo get_field('feedback_client_name'); ?></div>
-	<div class="feedback-card__subtitle"><?php echo get_field('feedback_client_slogan'); ?></div>
+	<a href="<?php the_permalink(); ?>" class="feedback-card__title"><?php echo get_field('review_client_name'); ?></a>
+	<div class="feedback-card__subtitle"><?php echo get_field('review_client_slogan'); ?></div>
 </div>
