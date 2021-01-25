@@ -23,7 +23,6 @@
 
     <div class="team-board">
 
-
       <div class="team-board__tabs">
         <div class="team-board__tab --all --active">Наша команда</div>
 	      <?php

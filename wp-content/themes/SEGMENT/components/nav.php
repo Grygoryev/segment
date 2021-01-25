@@ -13,6 +13,7 @@
                 <a class="nav__link-more-item" href="<?php echo site_url('/reviews'); ?>"> Отзывы </a>
                 <a class="nav__link-more-item" href="<?php echo site_url('/news'); ?>"> Новости </a>
                 <a class="nav__link-more-item" href="<?php echo site_url('/smi-o-nas'); ?>"> СМИ о нас </a>
+                <a class="nav__link-more-item" href="<?php echo site_url('/dostavka-i-oplata'); ?>"> Доставка и оплата </a>
             </div>
         </div>
         <a class="nav__link-box" href="<?php echo site_url('/team'); ?>">

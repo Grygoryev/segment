@@ -1,0 +1,47 @@
+.delivery {
+
+}
+
+.delivery-payment {
+
+  &__title {
+    color: @color-ocean;
+    margin-bottom: 20px;
+  }
+
+  &__tab {
+    cursor: pointer;
+  }
+
+  &__body {
+    margin-bottom: 50px;
+  }
+}
+
+.pay-data {
+  display: none;
+
+  &.--active {
+    display: block;
+  }
+
+  &__block {
+    margin-bottom: 20px;
+  }
+
+  &__line {
+    .flex(flex-start, center, row nowrap);
+  }
+
+  &__line-title {
+    font-family: @font-roboto-regular;
+    color: @color-ocean;
+    margin-right: 10px;
+  }
+
+  &__currency {
+    color: rgba(@color-grey);
+    font-family: @font-roboto-bold;
+    margin-bottom: 5px;
+  }
+}
