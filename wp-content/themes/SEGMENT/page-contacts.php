@@ -16,7 +16,7 @@
                     <div class="contacts-section">
                         <div class="contacts-section__title">Звоните нам:</div>
                         <div class="contacts-section__container">
-                            <a class="contacts-section__item" href="+375173619140">
+                            <a class="contacts-section__item" href="tel:<?php echo get_field('contacts_phone','option'); ?>">
                                 <svg>
                                     <use xlink:href="#icon-phone" href="#icon-phone"></use>
                                 </svg>
@@ -24,7 +24,7 @@
                                   <?php echo get_field('contacts_phone','option'); ?>
                                 </p>
                             </a>
-                            <a class="contacts-section__item" href="tel:+375296252103">
+                            <a class="contacts-section__item" href="tel:<?php echo get_field('contacts_mobile','option'); ?>">
                                 <svg>
                                     <use xlink:href="#icon-smartphone" href="#icon-smartphone"></use>
                                 </svg>

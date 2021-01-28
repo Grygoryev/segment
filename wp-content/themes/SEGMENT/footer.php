@@ -10,7 +10,7 @@
       <div class="footer__section">
         <div class="footer__title">Меню</div>
         <div class="footer__line --bordered">Вопрос-ответ</div>
-        <div class="footer__line --bordered">Доставка и оплата</div>
+        <a href="<?php echo site_url("/dostavka-i-oplata")?>" class="footer__line --bordered">Доставка и оплата</a>
         <div class="footer__line">Ответим в соц. сетях:</div>
         <div class="social-links">
           <svg class="soc-link">

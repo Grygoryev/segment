@@ -6,19 +6,22 @@ export const deliveryController = () => {
         payDataForeignBlock = document.getElementById('pay-foreign')
 
 
-    payBelarusTab.addEventListener('click', () => {
-        payDataBlocks.forEach(item => {
-            item.classList.remove('--active')
+    if (payBelarusTab && payForeignTab) {
+
+        payBelarusTab.addEventListener('click', () => {
+            payDataBlocks.forEach(item => {
+                item.classList.remove('--active')
+            })
+
+            payDataBelarusBlock.classList.add('--active')
         })
 
-        payDataBelarusBlock.classList.add('--active')
-    })
+        payForeignTab.addEventListener('click', () => {
+            payDataBlocks.forEach(item => {
+                item.classList.remove('--active')
+            })
 
-    payForeignTab.addEventListener('click', () => {
-        payDataBlocks.forEach(item => {
-            item.classList.remove('--active')
+            payDataForeignBlock.classList.add('--active')
         })
-
-        payDataForeignBlock.classList.add('--active')
-    })
+    }
 }

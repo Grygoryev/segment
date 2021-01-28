@@ -55,7 +55,12 @@
                         <use xlink:href="#icon-viber" href="#icon-viber"> </use>
                     </svg>
                 </div>
-                <div class="header__text">+375 29 625-21-03</div>
+                <a
+                    href="tel:<?php echo get_field('contacts_phone','option'); ?>"
+                    class="header__text"
+                >
+                  <?php echo get_field('contacts_phone','option'); ?>
+                </a>
                 <div class="header__btn btn --call">
                     <div class="btn__title">Заказать звонок</div>
                 </div>

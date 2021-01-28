@@ -5,6 +5,7 @@ import { licensesSliderController } from "./modules/licensesSliderController";
 import { teamController } from "@/js/modules/teamController";
 import { headerTabs } from "@/js/modules/headerTabs";
 import {deliveryController} from "@/js/modules/deliveryController";
+import { commonSliderController } from "@/js/modules/commonSliderController";
 
 function init() {
     headerController();
@@ -12,7 +13,8 @@ function init() {
     licensesSliderController();
     teamController();
     headerTabs();
-    deliveryController()
+    deliveryController();
+    commonSliderController();
 }
 
 init()

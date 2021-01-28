@@ -12,21 +12,32 @@
             </div>
 			<div class="achievments__list">
                 <?php
-                    $achievs = get_field('achievs');
+                    $achievs = new WP_Query(array(
+                        'posts_per_page' => -1,
+                        'post_type' => 'achievments',
+                    ));
 
-                    foreach ($achievs as $achiev) {
-                ?>
-                        <div class="achievment">
+                    while($achievs->have_posts()) {
+                        $achievs-> the_post();
+                    ?>
+                        <a
+                            href="<?php the_permalink(); ?>"
+                            class="achievment"
+                        >
                             <div class="achievment__title">
-                                <?php echo $achiev['achiev_title']; ?>
+                                <?php the_title(); ?>
                             </div>
                             <div class="achievment__img-box">
-                                <img src="<?php echo $achiev['achiev_photo']; ?>" alt="<?php echo $achiev['achiev_title']; ?>">
+                                <img
+                                    src="<?php the_post_thumbnail_url(); ?>"
+                                    alt="<?php the_title(); ?>"
+                                >
                             </div>
-                        </div>
-                <?php
-                    }
+                        </a>
+                    <?php }
+                    wp_reset_postdata();
                 ?>
+
 		</div>
 	</section>
 <?php

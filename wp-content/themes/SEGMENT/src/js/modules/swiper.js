@@ -61,7 +61,7 @@ export const introSwiper = new Swiper('.swiper-intro-container', {
   },
 })
 
-export const authorSwiper = new Swiper('.author-swiper-container', {
+export const commonSwiper = new Swiper('.common-swiper-container', {
   speed: 400,
   spaceBetween: 30,
  effect: 'coverflow',
@@ -69,11 +69,13 @@ export const authorSwiper = new Swiper('.author-swiper-container', {
    767: {
      grabCursor: true,
      centeredSlides: true,
-     slidesPerView: 'auto',
-     loop: true,
+     // slidesPerView: 'auto',
+     slidesPerView: '3',
+     spaceBetween: 0,
+     loop: false,
      coverflowEffect: {
        rotate: 50,
-       stretch: 0,
+       stretch: 20,
        depth: 100,
        modifier: 1,
        slideShadows : true,
@@ -81,6 +83,12 @@ export const authorSwiper = new Swiper('.author-swiper-container', {
      pagination: {
        el: '.swiper-pagination',
      },
+     navigation: {
+       nextEl: '.common-slider__controller--right',
+       prevEl: '.common-slider__controller--left',
+     },
    }
  }
 });
+
+commonSwiper.slideTo(1, false,false);

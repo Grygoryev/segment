@@ -19,7 +19,6 @@
                 <?php
                     $data = get_field('portfolio_book_data');
 
-
                 ?>
                 <div class="portfolio-info__section --info">
                     <div class="portfolio-info__author-n-year portfolio-info__title">
@@ -66,6 +65,9 @@
 
 <?php
 	}
+	get_template_part('template-parts/slider-common');
+	get_template_part('template-parts/video-frame-common');
 	include get_theme_file_path('/components/quiz-form.php');
+
 	get_footer();
 ?>

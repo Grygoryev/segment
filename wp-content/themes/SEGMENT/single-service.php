@@ -85,13 +85,19 @@
 
             <?php
                 if (get_field('pechat_knig_slider')) { ?>
-                    <div class="author-swiper-container">
+                    <div class="author-swiper-container common-slider">
+                        <div class="common-slider__controller swiper-author-button-next">
+                            <div class="round"></div>
+                        </div>
+                        <div class="common-slider__controller swiper-author-button-prev">
+                            <div class="round"></div>
+                        </div>
                         <div class="swiper-wrapper author-swiper-wrapper">
-                                        <?php
-                                            $photos = get_field('pechat_knig_slider');
+                            <?php
+                                $photos = get_field('pechat_knig_slider');
 
-                                            foreach ($photos as $photo) {
-                                                ?>
+                                foreach ($photos as $photo) {
+                                    ?>
                                 <div
                                         class="swiper-slide author-slide"
                                         style="background-image:url(<?php echo $photo['pechat_knig_slider_img']; ?>)"

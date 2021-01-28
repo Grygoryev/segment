@@ -11,4 +11,6 @@ function App() {
     )
 }
 
-render(<App/>, document.getElementById('quiz'))
+if (document.getElementById('quiz')) {
+    render(<App/>, document.getElementById('quiz'))
+}

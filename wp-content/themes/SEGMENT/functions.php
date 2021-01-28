@@ -47,8 +47,33 @@ function my_deregister_scripts(){
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
 function segment_features() {
-	add_theme_support('post-thumbnails');
+
+	if (function_exists('add_theme_support'))
+	{
+		add_theme_support('post-thumbnails');
+//		add_theme_support('menus');
+	}
+
+	add_filter('intermediate_image_sizes', 'dco_remove_default_image_sizes');
 }
+
+//add_image_size('large', 700, '', true); // Large Thumbnail
+//add_image_size('medium', 250, '', true); // Medium Thumbnail
+//add_image_size('small', 120, '', true); // Small Thumbnail
+//add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+
+function dco_remove_default_image_sizes( $sizes): array
+{
+	return array_diff( $sizes, array(
+		'medium',
+		'medium_large',
+//		'large',
+		'1536x1536',
+//		'2048x2048'
+	) );
+}
+
+add_filter('intermediate_image_sizes', 'dco_remove_default_image_sizes');
 
 function segment_post_types() {
   register_post_type('worker', [
@@ -149,6 +174,23 @@ function segment_post_types() {
 		'menu_icon' => 'dashicons-screenoptions'
 	]);
 
+	register_post_type('achievments', [
+		'supports' => ['title', 'editor', 'thumbnail'],
+	  'rewrite' => ['slug' => 'dostizheniya'],
+//    'has_archive' => true,
+		'public' => true,
+//		'taxonomies' => ['category'],
+		'hierarchical' => true,
+		'exclude_from_search' => false,
+		'labels' => [
+			'name' => 'Достижения',
+			'add_new' => 'Добавить достижения',
+			'edit_item' => 'Редактировать',
+			'all_items' => 'Все экземпляры',
+			'singular_name' => 'Достижения'
+		],
+		'menu_icon' => 'dashicons-buddicons-groups'
+	]);
 }
 
 add_action('init', 'segment_post_types');

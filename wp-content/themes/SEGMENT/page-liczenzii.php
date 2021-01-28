@@ -35,56 +35,39 @@
 					<div class="licenses__prev-btn"></div>
 					<div class="licenses__close-btn"><span></span><span></span></div>
 				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic1.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic2.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic3.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic4.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic5.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic6.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic7.jpg" alt="" title=""></div>
-				</div>
-				<div class="license-box">
-					<svg class="search-icon">
-						<use xlink:href="#icon-search" href="#icon-search"></use>
-					</svg>
-					<div class="license"><img class="license__img" src="img/licenses/pic8.jpg" alt="" title=""></div>
-				</div>
+                <?php
+                    $photos = get_field('licenses_photos');
+
+                    foreach ($photos as $photo) {
+                ?>
+                    <div class="license-box">
+                        <svg class="search-icon">
+                            <use xlink:href="#icon-search" href="#icon-search"></use>
+                        </svg>
+                        <div class="license">
+                            <img class="license__img"
+                                 src="<?php $photo['license_photo']; ?>"
+                                 alt="<?php $photo['license_photo_alt']; ?>"
+                            />
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
 			</div>
 		</div>
 	</section>
+    <section class="box video-box">
+        <div class="box__container video-box__container">
+            <div class="common-iframe">
+                <iframe
+                        src="<?php echo get_field('info_page_video_link'); ?>"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </section>
 <?php
 	get_footer();
