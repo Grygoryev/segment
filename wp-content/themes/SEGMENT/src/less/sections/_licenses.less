@@ -35,7 +35,6 @@
         z-index: 101;
         cursor: pointer;
         transition: 300ms all;
-        box-shadow: 0 0 20px rgba(@color-black, 0.05);
         box-shadow: 0 0 20px rgba(@color-white, 0.2);
 
         &:hover 
@@ -140,11 +139,8 @@
         transition: 500ms all;
     }
 
-    
-
     &:hover 
     {
-
         &::before
         {
             height: 100%;
@@ -179,12 +175,13 @@
             max-width: 95vw;
 
             .mintablet({
-                max-width: 65vw;
+                max-width: none;
+                max-height: 98vh;
             });
 
             .minmablet({
+                width: auto;
                 max-width: 600px;
-                width: 45vw;
             })
         }
     }

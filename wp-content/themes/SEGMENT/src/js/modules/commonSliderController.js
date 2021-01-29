@@ -3,9 +3,11 @@ export const commonSliderController = () => {
             container = document.getElementById('common-swiper-container'),
             closeBtn = document.getElementById('common-slider-close-big')
 
-    slides.forEach(slide => {
-        slide.addEventListener('click', () => container.classList.add('--big'))
-    })
+    if (slides) {
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => container.classList.add('--big'))
+        })
+    }
 
-    closeBtn.addEventListener('click', () => container.classList.remove('--big'))
+    if (closeBtn) closeBtn.addEventListener('click', () => container.classList.remove('--big'))
 }

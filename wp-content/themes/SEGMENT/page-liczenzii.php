@@ -36,9 +36,9 @@
 					<div class="licenses__close-btn"><span></span><span></span></div>
 				</div>
                 <?php
-                    $photos = get_field('licenses_photos');
+                    $licenses = get_field('licenses_photos');
 
-                    foreach ($photos as $photo) {
+                    foreach ($licenses as $license) {
                 ?>
                     <div class="license-box">
                         <svg class="search-icon">
@@ -46,8 +46,8 @@
                         </svg>
                         <div class="license">
                             <img class="license__img"
-                                 src="<?php $photo['license_photo']; ?>"
-                                 alt="<?php $photo['license_photo_alt']; ?>"
+                                 src="<?php echo $license['license_photo']; ?>"
+                                 alt="<?php echo $license['license_photo_alt']; ?>"
                             />
                         </div>
                     </div>

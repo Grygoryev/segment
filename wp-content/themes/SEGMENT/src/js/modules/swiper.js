@@ -91,4 +91,6 @@ export const commonSwiper = new Swiper('.common-swiper-container', {
  }
 });
 
-commonSwiper.slideTo(1, false,false);
+if (document.querySelector('.common-swiper-container')) {
+  commonSwiper.slideTo(1, false,false);
+}

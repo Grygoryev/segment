@@ -5,8 +5,12 @@
       <div class="title-box__back">Клиенты</div>
     </div>
     <div class="clients__slider-container swiper-client-container common-slider">
-      <div class="swiper-client-button-next clients__slider-controller common-slider__controller"></div>
-      <div class="swiper-client-button-prev clients__slider-controller common-slider__controller"></div>
+      <div class="swiper-client-button-next clients__slider-controller common-slider__controller common-slider__controller--right">
+          <div class="common-slider__btn-icon"></div>
+      </div>
+      <div class="swiper-client-button-prev clients__slider-controller common-slider__controller common-slider__controller--left">
+          <div class="common-slider__btn-icon"></div>
+      </div>
       <div class="clients__slider-wrapper swiper-wrapper">
           <?php
             $clients = get_field('clients');

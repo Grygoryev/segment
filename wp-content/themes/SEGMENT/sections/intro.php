@@ -1,17 +1,18 @@
 <section class="intro box" id="intro">
   <div class="intro__container box__container"><a class="intro__arrow-down link" href="#about" data-go-to="about"></a>
     <div class="intro__slider-container swiper-intro-container common-slider">
-      <div class="swiper-intro-button-next intro__slider-controller common-slider__controller"></div>
-      <div class="swiper-intro-button-prev intro__slider-controller common-slider__controller"></div>
+      <div class="swiper-intro-button-prev intro__slider-controller common-slider__controller common-slider__controller--left">
+          <div class="common-slider__btn-icon"></div>
+      </div>
+      <div class="swiper-intro-button-next intro__slider-controller common-slider__controller common-slider__controller--right">
+          <div class="common-slider__btn-icon"></div>
+      </div>
       <div class="swiper-wrapper intro__swipper-wrapper">
 
 	      <?php
 
 		      $repeater = get_field( 'slider_on_main_page' );
 		      foreach( $repeater as $item ) {
-//		    echo '<pre>';
-//		    print_r($item);
-//		    echo '</pre>';
 			      ?>
               <div class="intro__slide swiper-slide">
                   <img class="intro__img --director-img"
@@ -21,7 +22,6 @@
                   <div class="intro__text-info">
                       <div class="intro__back --from-one-example">
 	                      <?php echo $item['slidermain_title']; ?>
-<!--                          Издаем книги от <br> 1 экземпляра-->
                       </div>
                       <div class="intro__back --from-one-example">
 	                      <?php echo $item['slidermain_title']; ?>
