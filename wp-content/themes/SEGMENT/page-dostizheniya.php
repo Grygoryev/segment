@@ -4,7 +4,7 @@
 	<section class="achievments box">
 		<div class="achievments__container box__container">
 			<div class="title-box">
-				<div class="title-box__back"><?php the_title(); ?>></div>
+				<div class="title-box__back"><?php the_title(); ?></div>
 				<div class="title-box__title"><?php the_title(); ?></div>
 			</div>
 			<div class="common-description">

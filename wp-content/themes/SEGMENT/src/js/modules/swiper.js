@@ -65,6 +65,7 @@ export const commonSwiper = new Swiper('.common-swiper-container', {
   speed: 400,
   spaceBetween: 30,
  effect: 'coverflow',
+  autoplay: true,
  breakpoints: {
    767: {
      grabCursor: true,

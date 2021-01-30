@@ -15,10 +15,6 @@ a, a:hover, a:visited, a:focus {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
-}
-
 html {
   overflow-x: hidden;
   min-height: 100%;
@@ -29,6 +25,10 @@ html {
   }
 }
 
+ul li {
+  list-style: disc;
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -36,6 +36,20 @@ body {
   height: 100%;
   font-family: @font-default;
   -webkit-text-size-adjust: 100%;
+}
+
+blockquote {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25px;
+    width: 3px;
+    height: 100%;
+    background-color: @color-ocean;
+  }
 }
 
 .box {

@@ -154,6 +154,32 @@
 }
 
 .common-content {
+    h2 {
+        margin-bottom: 15px;
+        color: @color-ocean;
+    }
+
+    ul {
+        padding-left: 20px;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    li {
+        margin-bottom: 10px;
+        .font(14px, 1.4);
+        font-family: @font-roboto-light;
+
+
+        .mindesktop-sm({
+            max-width: 65%;
+            font-size: 16px;
+            line-height: 1.2;
+        });
+    }
+
     p {
         margin-bottom: 10px;
         .font(14px, 1.4);
@@ -176,6 +202,11 @@
             color: #5C6163;
             max-width: 94%;
         }
+    }
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 }
 

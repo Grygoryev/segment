@@ -61,7 +61,7 @@
         ?>
             <div class="author-card">
                 <div class="author-card__section --img">
-                    <img src="<?php echo $tab['pechat_knig_tab_img']; ?> alt="<?php echo $tab['pechat_knig_tab_title']; ?>">
+                    <img src="<?php echo $tab['pechat_knig_tab_img']; ?>" alt="<?php echo $tab['pechat_knig_tab_title']; ?>">
                 </div>
                 <div class="author-card__section --text">
                     <div class="author-card__title"><?php echo $tab['pechat_knig_tab_title'];?></div>
@@ -96,7 +96,6 @@
             </div>
         </div>
 	</section>
-
 
 <?php
 	include get_theme_file_path('/components/quiz-form.php');

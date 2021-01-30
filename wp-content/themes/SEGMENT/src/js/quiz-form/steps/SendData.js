@@ -5,17 +5,47 @@ const SendData = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
 
+    function postData(url = '', data = {}) {
+        // Default options are marked with *
+        const response = fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        // return response.json(); // parses JSON response into native JavaScript objects
+    }
+
     let handleSubmit = (e) => {
         e.preventDefault();
 
-        let data = JSON.stringify(data)
+        let data2 = JSON.stringify(data)
+        // console.log(data2)
 
-        let post = fetch(segmentData.rootUrl +'/mail.php', {
-            method: 'POST',
-            body: data
-        })
+        postData(segmentData.rootUrl +'/mail.php', data2)
+            .then((data) => {
+                console.log('SUCCESS'); // JSON data parsed by `response.json()` call
+                console.log(data); // JSON data parsed by `response.json()` call
+            });
 
-        setStep(7)
+        console.log(segmentData.rootUrl + '/mail.php');
+
+        // let post = fetch(segmentData.rootUrl +'/mail.php', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: data
+        // })
+
+        // setStep(7)
     }
 
     function onInput(e) {
