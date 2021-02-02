@@ -7,7 +7,6 @@
             <div class="box__container">
                 <div class="title-box">
                     <div class="title-box__title"><?php the_title(); ?></div>
-<!--                    <div class="title-box__back">--><?php //the_title(); ?><!--</div>-->
                 </div>
             </div>
         </section>

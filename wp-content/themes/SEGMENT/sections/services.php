@@ -13,8 +13,6 @@
 
 	        while($services->have_posts()) {
 	            $services-> the_post();
-
-
         ?>
             <a
                 class="service"
@@ -34,7 +32,9 @@
                     <div class="service__title">
                         <?php the_title(); ?>
                     </div>
-                    <div class="service__description">Юбилейные, корпоративные и имиджевые издания.</div>
+                    <div class="service__description">
+                        <?php echo get_field('service_subtitle'); ?>
+                    </div>
                 </footer>
             </a>
 
