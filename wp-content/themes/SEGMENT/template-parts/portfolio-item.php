@@ -14,8 +14,8 @@
 		<div class="portfolio-item__title">
 			<?php the_title(); ?>
 		</div>
-<!--		<div class="portfolio-item__description">-->
-<!--			--><?php //the_excerpt(); ?>
-<!--		</div>-->
+		<div class="portfolio-item__description">
+	        <?php echo get_field('portfolio_tab_subtitle'); ?>
+		</div>
 	</div>
 </a>

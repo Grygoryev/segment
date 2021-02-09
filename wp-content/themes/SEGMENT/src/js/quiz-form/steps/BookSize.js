@@ -5,18 +5,19 @@ const BookSize = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
     let [customMode, setCustomMode] = useState(false);
-    let [customSize] = useState(data.book_params)
-    
+
+    let fromPage = document.getElementById('quiz-form').dataset.pageUrl
+
+    useEffect( () => {
+        setData({
+            ...data,
+            fromPage
+        })
+
+    }, [fromPage])
+
     let handleSubmit = (e) => {
         e.preventDefault();
-        
-        if (customMode) {
-            setData({
-                ...data,
-                'book_size': 'custom',
-                'book_params': customSize
-            })
-        }
 
         setStep(2)
     }
@@ -33,16 +34,23 @@ const BookSize = () => {
             'book_size': e.target.value
         })
 
-        data.book_params = {}
     }
 
     let onInput = e => {
         if (e.target.name == "custom_width") {
-            data.book_params.custom_width = e.target.value
+            setData({
+                ...data,
+                'book_size': 'custom',
+                'data_custom_width': e.target.value
+            })
         }
 
         if (e.target.name == "custom_height") {
-            data.book_params.custom_height = e.target.value
+            setData({
+                ...data,
+                'book_size': 'custom',
+                'data_custom_height': e.target.value
+            })
         }
     }
 
@@ -82,7 +90,7 @@ const BookSize = () => {
                <div className="book-size__container">
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src={segmentData.rootUrl + "/img/quiz/A6.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A6.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A6" checked={data.book_size === 'A6'} name="book_size" onChange={setBookSize} />
@@ -91,7 +99,7 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src={segmentData.rootUrl + "/img/quiz/A5.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A5.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A5" name="book_size" onClick={setBookSize}/>
@@ -100,7 +108,7 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src={segmentData.rootUrl + "/img/quiz/A4.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A4.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" value="A4" name="book_size" onClick={setBookSize}/>
@@ -109,14 +117,14 @@ const BookSize = () => {
                     </label>
                     <label className="book-size__item quiz__card">
                         <div className="book-size__body">
-                            <img src={segmentData.rootUrl + "/img/quiz/A.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" checked={data.book_size === 'custom' || customMode} onChange={() => setCustomMode(true)}/>
                             <h5 className="">Другой</h5>
                         </div>
                     </label>
-                    { customMode || data.book_size === 'custom' ? customFields : ''}
+                    { customMode ? customFields : ''}
                </div>
                <button className="quiz__btn btn" type="submit">Далее</button>
             </form>

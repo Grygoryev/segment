@@ -29,12 +29,9 @@
                     </div>
                 </div>
                 <footer class="service__footer">
-                    <div class="service__title">
+                    <h3 class="service__title">
                         <?php the_title(); ?>
-                    </div>
-                    <div class="service__description">
-                        <?php echo get_field('service_subtitle'); ?>
-                    </div>
+                    </h3>
                 </footer>
             </a>
 

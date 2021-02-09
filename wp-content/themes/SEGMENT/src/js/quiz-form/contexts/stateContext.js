@@ -6,10 +6,8 @@ const StateContextProvider = ({children}) => {
     let [step, setStep] = useState(1)
     let [data, setData] = useState({
         book_size: '',
-        book_params: {
-            custom_width: '',
-            custom_height: ''
-        },
+        book_custom_width: '',
+        book_custom_height: '',
         pages_in_book: '',
         how_many_books: '',
         cover_type: '',
@@ -21,7 +19,8 @@ const StateContextProvider = ({children}) => {
         user_name: '',
         user_phone: '',
         user_email: '',
-        user_comment: ''
+        user_comment: '',
+        from_page: ''
     })
 
     return (

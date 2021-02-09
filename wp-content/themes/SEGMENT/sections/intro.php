@@ -12,6 +12,8 @@
 	      <?php
 
 		      $repeater = get_field( 'slider_on_main_page' );
+		      $count = 1;
+
 		      foreach( $repeater as $item ) {
 			      ?>
               <div class="intro__slide swiper-slide">
@@ -23,19 +25,21 @@
                       <div class="intro__back --from-one-example">
 	                      <?php echo $item['slidermain_title']; ?>
                       </div>
-                      <div class="intro__back --from-one-example">
-	                      <?php echo $item['slidermain_title']; ?>
-                      </div>
-                      <h2 class="intro__title"><?php echo $item['slidermain_title']; ?></h2>
+                      <?php if ($count == 1) { ?>
+                            <h1 class="intro__title"><?php echo $item['slidermain_title']; ?></h1>
+                    <?php } else { ?>
+                            <h2 class="intro__title"><?php echo $item['slidermain_title']; ?></h2>
+                      <?php } ?>
                       <p class="intro__description">
 									      <?php echo $item['slidermain_description']; ?>
                       </p>
-                      <div class="intro__btn btn">
-                          <div class="btn__title">Задать вопрос</div>
-                      </div>
+                      <a href="<?php echo $item['slidermain_button_link']; ?>" class="intro__btn btn">
+                          <div class="btn__title"><?php echo $item['slidermain_button_text'];?></div>
+                      </a>
                   </div>
               </div>
 			      <?php
+                    $count++;
 		      }
 	      ?>
 

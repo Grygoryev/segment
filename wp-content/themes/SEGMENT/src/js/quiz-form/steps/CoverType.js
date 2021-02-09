@@ -32,7 +32,7 @@ const CoverType = () => {
     return (
         <React.Fragment>
             <header className="quiz__header">
-                <h3 className="quiz__title">Выберте переплёт <span>книги:</span></h3>
+                <h3 className="quiz__title">Выберите переплёт <span>книги:</span></h3>
                 <div className="quiz-progress-bar">
                     <div className="quiz-progress-bar__title">
                         Шаг 3 из 6
@@ -49,7 +49,7 @@ const CoverType = () => {
                         <div className="cover-type__micro-options quiz__cards">
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">
-                                    <img src={segmentData.rootUrl + "/img/quiz/soft_kleevoy.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/soft_kleevoy.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> КБС <br/>(клеевой)</p>
@@ -59,7 +59,7 @@ const CoverType = () => {
                             </label>
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">
-                                    <img src={segmentData.rootUrl + "/img/quiz/soft_proshitiy.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/soft_proshitiy.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> КШС <br/>(прошитый)</p>
@@ -68,16 +68,16 @@ const CoverType = () => {
                             </label>
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">   
-                                    <img src={segmentData.rootUrl + "/img/quiz/soft_skoba.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/soft_skoba.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
-                                    <p> Скобка </p>
+                                    <p> Скоба </p>
                                     <input type="radio" name="soft" checked={data.cover_type_species == 'skoba'} value="skoba" onChange={ handleChooze} />
                                 </footer>
                             </label>
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">
-                                    <img src={segmentData.rootUrl + "/img/quiz/soft_pruzhina.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/soft_pruzhina.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> Пружина </p>
@@ -91,7 +91,7 @@ const CoverType = () => {
                         <div className="cover-type__micro-options quiz__cards">
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">
-                                    <img src={segmentData.rootUrl + "/img/quiz/hard_colorful.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/hard_colorful.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> 7БЦ <br/>(цветной)</p>
@@ -100,7 +100,7 @@ const CoverType = () => {
                             </label>
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">
-                                    <img src={segmentData.rootUrl + "/img/quiz/hard_leisure.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/hard_leisure.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> 7Б <br/>(под кожу)</p>
@@ -109,7 +109,7 @@ const CoverType = () => {
                             </label>
                             <label className="cover-type__micro-option quiz__card">
                                 <div className="quiz__card-body">   
-                                    <img src={segmentData.rootUrl + "/img/quiz/hard_integralny.png"} alt="" title=""/>
+                                    <img src={segmentData.themeUrl + "/img/quiz/hard_integralny.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
                                     <p> Интегральный </p>

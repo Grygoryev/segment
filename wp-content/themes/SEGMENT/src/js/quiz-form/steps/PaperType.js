@@ -22,27 +22,31 @@ const PaperType = () => {
             ...data,
             paper_density: e.target.value
         })
+
+        console.log(e.target.value)
     }
 
     let paperDensity
 
     if (data.paper_type === "offset") {
+
         paperDensity = (
            <>
                <div className="paper-density__title"> Плотность бумаги: </div>
                <select name="" id="">
-                   <option value="80" onChange={chooseDensity}>80 гр/м кв.</option>
-                   <option value="100" onChange={chooseDensity}>100 гр/м кв.</option>
+                   <option value="80" onClick={chooseDensity} onChange={chooseDensity}>80 гр/м кв.</option>
+                   <option value="100" onClick={chooseDensity} onChange={chooseDensity}>100 гр/м кв.</option>
                </select>
            </>
         )
     } else if (data.paper_type === "melovan") {
+
         paperDensity = (
             <>
                 <div className="paper-density__title"> Плотность бумаги: </div>
-                <select name="" id="">
-                    <option value="130" onChange={chooseDensity}>130 гр/м кв.</option>
-                    <option value="150" onChange={chooseDensity}>150 гр/м кв.</option>
+                <select onChange={chooseDensity} name="" id="">
+                    <option value="130">130 гр/м кв.</option>
+                    <option value="150">150 гр/м кв.</option>
                 </select>
             </>
         )
@@ -51,7 +55,7 @@ const PaperType = () => {
     return (
         <React.Fragment>
             <header className="quiz__header">
-                <h3 className="quiz__title">Выберете <span>бумагу</span></h3>
+                <h3 className="quiz__title">Выберите <span>бумагу</span></h3>
                 <div className="quiz-progress-bar">
                     <div className="quiz-progress-bar__title">
                         Шаг 4 из 6
@@ -68,7 +72,7 @@ const PaperType = () => {
                 <div className="quiz__cards paper-type__cards">
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src={segmentData.rootUrl + "/img/quiz/prepare_offset.png"} className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/prepare_offset.png"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="offset" checked={data.paper_type == "offset"} onChange={handleChooze} />
@@ -77,7 +81,7 @@ const PaperType = () => {
                     </label>
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src={segmentData.rootUrl + "/img/quiz/prepare_melovan.png"} className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/prepare_melovan.png"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="melovan" checked={data.paper_type == "melovan"} onChange={handleChooze} />
@@ -86,7 +90,7 @@ const PaperType = () => {
                     </label>
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
-                            <img src={segmentData.rootUrl + "/img/quiz/dontknow.svg"} className="paper-type__img" alt="" title="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/dontknow.svg"} className="paper-type__img" alt="" title="" />
                         </div>
                         <footer className="quiz__card-footer paper-type__card-footer">
                             <input type="radio" name="paper_type" value="unknown" checked={data.paper_type == "unknown"} onChange={handleChooze} />

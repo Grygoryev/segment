@@ -4,7 +4,7 @@ export const navController = () => {
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
+            // e.preventDefault();
 
 
             window.scrollTo({

@@ -21,7 +21,7 @@
                 </div>
                 <div class="advantage__info advantage__section">
                     <div class="advantage__num"><?php echo $card['why_we_number']; ?></div>
-                    <div class="advantage__title"><?php echo $card['why_we_title']; ?></div>
+                    <h3 class="advantage__title"><?php echo $card['why_we_title']; ?></h3>
                     <div class="advantage__description"><?php echo $card['why_we_description']; ?></div>
                     <a href="<?php echo $card['why_we_link']; ?>" class="advantage__btn-learn-more btn">
                         <div class="btn__title">Узнать больше</div>

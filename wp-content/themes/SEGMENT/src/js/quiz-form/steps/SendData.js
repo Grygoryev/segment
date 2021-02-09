@@ -5,47 +5,30 @@ const SendData = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
 
-    function postData(url = '', data = {}) {
-        // Default options are marked with *
-        const response = fetch(url, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer, *client
-            body: JSON.stringify(data) // body data type must match "Content-Type" header
-        });
-        // return response.json(); // parses JSON response into native JavaScript objects
-    }
-
     let handleSubmit = (e) => {
         e.preventDefault();
 
-        let data2 = JSON.stringify(data)
-        // console.log(data2)
+        let array = [];
 
-        postData(segmentData.rootUrl +'/mail.php', data2)
-            .then((data) => {
-                console.log('SUCCESS'); // JSON data parsed by `response.json()` call
-                console.log(data); // JSON data parsed by `response.json()` call
-            });
+        Object.keys(data).forEach(element => {
+                array.push(
+                    encodeURIComponent(element) + "=" + encodeURIComponent(data[element])
+                )
+            }
+        );
 
-        console.log(segmentData.rootUrl + '/mail.php');
+        let body = array.join("&");
+        let xhttp = new XMLHttpRequest();
 
-        // let post = fetch(segmentData.rootUrl +'/mail.php', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: data
-        // })
-
-        // setStep(7)
+        xhttp.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200){
+              // alert('!')
+            }
+        };
+        xhttp.open('POST', segmentData.ajaxUrl + '?action=send_mail', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(body);
+        setStep(7);
     }
 
     function onInput(e) {
@@ -104,7 +87,7 @@ const SendData = () => {
                         <input name="user_phone" type="text" onChange={onInput}/>
                     </div>
                     <div className="send-data__input-box quiz__input-box">
-                        <p>Введите вашe почту:</p>
+                        <p>Введите вашу почту:</p>
                         <input name="user_mail" type="text" onChange={onInput}/>
                     </div>
                     <div className="send-data__input-box quiz__input-box">
@@ -117,7 +100,7 @@ const SendData = () => {
                         <div className="send-data__gift-suptitle">Ваш подарок:</div>
                         <div className="send-data__gift">
                             <div className="send-data__gift-img">
-                                <img src={segmentData.rootUrl + "/img/quiz/ibsn.png"} alt=""/>
+                                <img src={segmentData.themeUrl + "/img/quiz/ibsn.png"} alt=""/>
                             </div>
                             <h4 className="send-data__gift-title">Присвоение <br/> ISBN номера <span>вашей книге</span></h4>
                         </div>
@@ -126,9 +109,9 @@ const SendData = () => {
                         <input type="checkbox" defaultChecked/>
                         <div className="send-data__privacy-text">
                             <p>
-                                Нажимая на кнопку "Получить рассчёт" вы принимаете
+                                Нажимая на кнопку "Получить расчёт" вы принимаете
                             </p>
-                            <a href="">&nbsp; условия обработки персональных данных</a>
+                            <a href={segmentData.themeUrl + '/resources/privacy_agreement.docx'}>&nbsp; условия обработки персональных данных</a>
                         </div>
                     </div>
                 </fieldset>

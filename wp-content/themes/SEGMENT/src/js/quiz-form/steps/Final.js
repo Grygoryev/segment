@@ -11,7 +11,7 @@ const Final = () => {
             </header>
             <div className="final">
                 <div className="final__pic">
-                    <img src={segmentData.rootUrl + "/img/quiz/ok.svg"} alt=""/>
+                    <img src={segmentData.themeUrl + "/img/quiz/ok.svg"} alt=""/>
                 </div>
                 <p className="final__title">Специалисты скоро приступят <span>к расчёту!</span></p>
                 <div className="final__description">

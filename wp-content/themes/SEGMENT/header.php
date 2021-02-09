@@ -11,7 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/png" href="/img/icon-logo.svg">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
+	<?php rel_canonical(); ?>
     <?php wp_head(); ?>
 </head>
 
@@ -37,7 +38,21 @@
 <header class="header box" id="header" style="<?php echo $headerTop; ?>">
     <div class="header__line --top">
         <div class="header__container box__container">
-            <a class="header__logo" href="<?php echo get_home_url(); ?>">
+            <a class="header__logo"
+               <?php
+                if (is_front_page()) {
+                    ?>
+
+                <?php
+                } else {
+                    ?>
+
+                    href="<?php echo get_home_url(); ?>"
+                <?php
+                }
+               ?>
+
+            >
                 <svg>
                     <use xlink:href="#icon-logo-white" href="#icon-logo-white"></use>
                 </svg>
@@ -56,10 +71,10 @@
                     </svg>
                 </div>
                 <a
-                    href="tel:<?php echo get_field('contacts_phone','option'); ?>"
+                    href="tel:<?php echo get_field('contacts_mobile','option'); ?>"
                     class="header__text"
                 >
-                  <?php echo get_field('contacts_phone','option'); ?>
+                  <?php echo get_field('contacts_mobile','option'); ?>
                 </a>
                 <div class="header__btn btn --call">
                     <div class="btn__title">Заказать звонок</div>

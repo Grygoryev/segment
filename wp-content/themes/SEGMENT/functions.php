@@ -23,10 +23,11 @@ function load_styles_and_scripts() {
 //	      is_page('single-portfolio') &&
 //	      is_page('Портфолио')
 //    ) {
-	    wp_enqueue_script('quiz', get_template_directory_uri() . '/js/QuizForm.js', [], '1.0', true);
-	    wp_localize_script('quiz', 'segmentData', array(
-		    'rootUrl' => get_site_url()
-	    ));
+//	    wp_enqueue_script('quiz', get_template_directory_uri() . '/js/QuizForm.js', [], '1.0', true);
+//	    wp_localize_script('quiz', 'segmentData', array(
+////		    'rootUrl' => get_site_url(),
+//		    'ajaxurl' => admin_url( 'admin-ajax.php' )
+//	    ));
 //    }
 }
 
@@ -206,3 +207,9 @@ add_action('after_setup_theme', 'segment_features');
 			'redirect' => false
 		));
 	}
+
+	function change_email($email) {
+		return 'SEGMENT WEB SITE';
+	}
+
+	add_filter('wp_mail_from','change_email');
