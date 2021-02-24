@@ -1,7 +1,7 @@
 <section class="clients box" id="clients">
   <div class="clients__container box__container">
     <div class="title-box">
-      <div class="title-box__title">С нами работают</div>
+      <h2 class="title-box__title">С нами работают</h2>
       <div class="title-box__back">Клиенты</div>
     </div>
     <div class="clients__slider-container swiper-client-container common-slider">
@@ -21,7 +21,9 @@
                     <img
                         src="<?php echo $client['client_img']; ?>"
                         alt="<?php echo $client['client_img_alt']; ?>"
-                        title="<?php echo $client['client_img_title']; ?>">
+                        title="<?php echo $client['client_img_title']; ?>"
+                        loading="lazy"
+                    >
                 </div>
 
           <?php

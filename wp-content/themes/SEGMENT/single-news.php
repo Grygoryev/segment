@@ -11,7 +11,7 @@
         <section class="box">
             <div class="box__container">
                 <div class="title-box">
-                    <div class="title-box__title"><?php the_title(); ?></div>
+                    <h2 class="title-box__title"><?php the_title(); ?></h2>
                 </div>
             </div>
         </section>

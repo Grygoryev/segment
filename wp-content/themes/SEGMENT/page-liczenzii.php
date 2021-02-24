@@ -5,7 +5,7 @@
 		<div class="licenses__container box__container">
 			<div class="title-box">
 				<div class="title-box__back"><?php the_title(); ?></div>
-				<div class="title-box__title"><?php the_title(); ?></div>
+				<h1 class="title-box__title"><?php the_title(); ?></h1>
 			</div>
 			<div class="licenses-text">
 				<div class="licenses-text__description">
@@ -17,9 +17,9 @@
 
                     foreach ($textblocks as $textblock) {
                 ?>
-                        <div class="licenses-text__title">
+                        <h3 class="licenses-text__title">
                             <?php echo $textblock['licenses_text_title']; ?>
-                        </div>
+                        </h3>
                         <div class="licenses-text__description">
 	                        <?php echo $textblock['licenses_text_description']; ?>
                         </div>
@@ -46,6 +46,7 @@
                         </svg>
                         <div class="license">
                             <img class="license__img"
+                                 loading="lazy"
                                  src="<?php echo $license['license_photo']; ?>"
                                  alt="<?php echo $license['license_photo_alt']; ?>"
                             />

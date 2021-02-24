@@ -5,9 +5,9 @@
 <section class="delivery author box">
 	<div class="delivery__container author__container box__container">
 		<div class="title-box">
-			<div class="author__title title-box__title">
+			<h2 class="author__title title-box__title">
 				<?php the_title(); ?>
-			</div>
+			</h2>
 			<div class="title-box__back">
 				<?php the_title(); ?>
 			</div>
@@ -22,14 +22,15 @@
 					<div class="author-card">
 						<div class="author-card__section --img">
 							<img
+                                loading="lazy"
 								src="<?php echo $tab['dostavka_tab_img']['url']; ?>"
 								alt="<?php echo $tab['dostavka_tab_header']; ?>"
 							>
 						</div>
 						<div class="author-card__section --text">
-							<div class="author-card__title">
+							<h3 class="author-card__title">
 								<?php echo $tab['dostavka_tab_header']; ?>
-							</div>
+							</h3>
 							<div class="author-card__description">
 								<?php echo $tab['dostavka_tab_description']; ?>
 							</div>

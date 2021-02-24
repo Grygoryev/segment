@@ -1,13 +1,21 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {StateContext} from "../contexts/stateContext"
 
 const EditionParams = () => {
     let {setStep} = useContext(StateContext);
     let {data} = useContext(StateContext);
+    let [isConfirm, setConfirm] = useState(null)
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        setStep(3)
+
+        if (!data.pages_in_book || !data.how_many_books) {
+            setConfirm(false)
+            alert('Заполните пожалуйста необходимые поля')
+        } else {
+            setConfirm(true)
+            setStep(3)
+        }
     }
 
     let onInput = (e) => {
@@ -40,7 +48,7 @@ const EditionParams = () => {
                         <div className="edition-params__section">
                             <p>Сколько страниц будет в книге</p>
                             <div className="quiz__input-box edition-params__input-box">
-                                <input type="text" name="pages_in_book" onChange={onInput} />
+                                <input className={isConfirm === false ? '--required' : ''} type="text" name="pages_in_book" onChange={onInput} />
                                 <span>стр.</span>
                             </div>
                         </div>
@@ -48,7 +56,7 @@ const EditionParams = () => {
                         <div className="edition-params__section">
                             <p>Сколько будет экземпляров</p>
                             <div className="quiz__input-box edition-params__input-box">
-                                <input type="text" name="how_many_books" onChange={onInput} />
+                                <input className={isConfirm === false ? '--required' : ''} type="text" name="how_many_books" onChange={onInput} />
                                 <span>шт.</span>
                             </div>
                         </div>

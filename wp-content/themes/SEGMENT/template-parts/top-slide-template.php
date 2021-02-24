@@ -5,12 +5,14 @@
 
 <?php
 	$slider = get_field('top_slider');
+	$count = 1;
 
 	foreach ($slider as $slide) {
 		?>
 
 		<div class="intro__slide --visible">
 			<img
+                loading="lazy"
 				class="intro__img"
 				src="<?php echo $slide['top_slide_img']; ?>"
 				alt="<?php echo $slide['top_slide_alt']; ?>">
@@ -18,9 +20,17 @@
 				<div class="intro__back">
 					<?php echo $slide['top_slide_title_back']; ?>
 				</div>
-				<h1 class="intro__title">
-					<?php echo $slide['top_slide_title']; ?>
-				</h1>
+                <?php if ($count == 1) { ?>
+                    <h1 class="intro__title">
+                        <?php echo $slide['top_slide_title']; ?>
+                    </h1>
+                <?php } else { ?>
+                    <h2 class="intro__title">
+			                <?php echo $slide['top_slide_title']; ?>
+                    </h2>
+                <?php }
+                    $count++;
+                ?>
 				<p class="intro__description">
 					<?php echo $slide['top_slide_description']; ?>
 				</p>

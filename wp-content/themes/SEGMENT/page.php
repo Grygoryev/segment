@@ -12,7 +12,7 @@
 				<div class="swiper-intro-button-next intro__slider-controller common-slider__controller"></div>
 				<div class="swiper-intro-button-prev intro__slider-controller common-slider__controller"></div>
 				<div class="swiper-wrapper intro__swipper-wrapper">
-					<div class="intro__slide swiper-slide"><img class="intro__img --director-img" src="img/worker.png" alt="Издаем книги от 1 экземпляра" title="Издаем книги от 1 экземпляра">
+					<div class="intro__slide swiper-slide"><img loading="lazy" class="intro__img --director-img" src="img/worker.png" alt="Издаем книги от 1 экземпляра" title="Издаем книги от 1 экземпляра">
 						<div class="intro__text-info">
 							<div class="intro__back --from-one-example">Издаем книги от <br> 1 экземпляра</div>
 							<h2 class="intro__title">Издаем книги от 1 экземпляра</h2>

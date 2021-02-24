@@ -1,56 +1,35 @@
-import React, {useContext} from 'react'
-import {StateContext} from "../contexts/stateContext"
+import React, {useContext, useState} from 'react'
+import {StateContext} from "../../contexts/stateContext"
+import {PaperDensity} from "@/js/quiz-form/steps/PaperType/PaperDensity";
+import {HighlightDensityContext} from "@/js/quiz-form/contexts/highlightDensity";
+
 
 const PaperType = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
+    let {highlightDensity} = useContext(HighlightDensityContext)
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        setStep(5)
+
+        if (!data.paper_type) {
+            alert('Для продолжения нужно выбрать один из вариантов')
+        } else if (data.paper_type !== 'unknown' && !data.paper_density) {
+            alert('Выберите, пожалуйста, плотность бумаги')
+            highlightDensity(true)
+        } else {
+            setStep(5)
+        }
     }
 
     function handleChooze(e) {
         setData({
             ...data,
-            paper_type: e.target.value
+            paper_type: e.target.value,
+            paper_density: ''
         })
     }
 
-    function chooseDensity(e) {
-        setData({
-            ...data,
-            paper_density: e.target.value
-        })
-
-        console.log(e.target.value)
-    }
-
-    let paperDensity
-
-    if (data.paper_type === "offset") {
-
-        paperDensity = (
-           <>
-               <div className="paper-density__title"> Плотность бумаги: </div>
-               <select name="" id="">
-                   <option value="80" onClick={chooseDensity} onChange={chooseDensity}>80 гр/м кв.</option>
-                   <option value="100" onClick={chooseDensity} onChange={chooseDensity}>100 гр/м кв.</option>
-               </select>
-           </>
-        )
-    } else if (data.paper_type === "melovan") {
-
-        paperDensity = (
-            <>
-                <div className="paper-density__title"> Плотность бумаги: </div>
-                <select onChange={chooseDensity} name="" id="">
-                    <option value="130">130 гр/м кв.</option>
-                    <option value="150">150 гр/м кв.</option>
-                </select>
-            </>
-        )
-    }
 
     return (
         <React.Fragment>
@@ -61,14 +40,16 @@ const PaperType = () => {
                         Шаг 4 из 6
                     </div>
                     <div className="quiz-progress-bar__bar">
-                        <span className="quiz-progress-bar__bar-fullfilment --step4"></span>
+                        <span className="quiz-progress-bar__bar-fullfilment --step4"/>
                     </div>
                 </div>
             </header>
             <form className="quiz__form paper-type" onSubmit={handleSubmit}>
-                <div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
-                    { paperDensity }
-                </div>
+
+                    <div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
+                    {/*<div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''} ${isDensityHighlighted ? '--highlighted' : ''}`}>*/}
+                        <PaperDensity paperType={data.paper_type} />
+                    </div>
                 <div className="quiz__cards paper-type__cards">
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">

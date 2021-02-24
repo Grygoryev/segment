@@ -3,14 +3,22 @@ import {StateContext} from "./contexts/stateContext"
 import BookSize from './steps/BookSize';
 import EditionParams from './steps/EditionParams';
 import CoverType from './steps/CoverType';
-import PaperType from './steps/PaperType';
+import PaperType from './steps/PaperType/PaperType';
 import Preparing from "@/js/quiz-form/steps/Preparing";
 import SendData from "@/js/quiz-form/steps/SendData";
 import Final from "@/js/quiz-form/steps/Final";
 import Aside from "@/js/quiz-form/Aside";
+import {correctView} from "@/js/quiz-form/helpers/correctView";
+import HighlightDensityContextProvider from "@/js/quiz-form/contexts/highlightDensity";
 
 const Main = () => {
     let {step} = useContext(StateContext);
+
+    useEffect(() => {
+        if (step > 1) {
+            correctView()
+        }
+    }, [step])
 
     return (
         <div className="quiz">
@@ -23,9 +31,13 @@ const Main = () => {
                         case(2): 
                             return <EditionParams/>
                         case(3): 
-                            return <CoverType/>
-                        case(4): 
-                            return <PaperType/>
+                             return <CoverType/>
+                        case(4):
+                            return (
+                                <HighlightDensityContextProvider>
+                                    <PaperType/>
+                                </HighlightDensityContextProvider>
+                            )
                         case(5): 
                             return <Preparing/>
                         case(6): 

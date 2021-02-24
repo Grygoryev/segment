@@ -10,7 +10,7 @@
 				<div class="swiper-intro-button-prev intro__slider-controller common-slider__controller"></div>
 				<div class="swiper-wrapper intro__swipper-wrapper">
 					<div class="intro__slide swiper-slide">
-						<img class="intro__img --director-img" src="img/worker.png" alt="Издаем книги от 1 экземпляра">
+						<img class="intro__img --director-img" loading="lazy" src="img/worker.png" alt="Издаем книги от 1 экземпляра">
 						<div class="intro__text-info">
 							<div class="intro__back --from-one-example">Издаем книги от <br> 1 экземпляра</div>
 							<h2 class="intro__title">Издаем книги от 1 экземпляра</h2>
@@ -30,7 +30,7 @@
 							<p class="intro__btn-signtature">Прямо сейчас <span>получите бесплатный расчёт</span><br/>стоимости в твёрдом и мягком переплёте</p>
 						</div>
 					</div>
-					<div class="intro__slide swiper-slide"><img class="intro__img" src="img/intro-img5.png">
+					<div class="intro__slide swiper-slide"><img loading="lazy" class="intro__img" src="img/intro-img5.png">
 						<div class="intro__text-info">
 							<div class="intro__back --about-manufactures">Создаем книги о <br> предприятиях «под ключ»</div>
 							<h2 class="intro__title">Создаем книги о предприятиях «под ключ»</h2>

@@ -13,6 +13,7 @@
 					<div class="author-card">
 						<div class="author-card__section --img">
 							<img
+                                loading="lazy"
 								src="<?php echo $tab['common_tab_img']; ?>"
 								alt="<?php echo $tab['common_tab_title']; ?>"
 							>

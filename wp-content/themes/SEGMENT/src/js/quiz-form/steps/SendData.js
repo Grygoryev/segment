@@ -1,34 +1,48 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
+import {translateData} from "@/js/quiz-form/helpers/translateData";
 
 const SendData = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
+    let [isConfirm, setConfirm] = useState(null)
 
     let handleSubmit = (e) => {
         e.preventDefault();
 
-        let array = [];
+        if (!data.user_name || !data.user_mail || !data.user_phone) {
+            alert('Для отправки данных, заполните пожалуйста необходимые поля')
+            setConfirm(false)
+        } else {
+            setConfirm(true)
 
-        Object.keys(data).forEach(element => {
-                array.push(
-                    encodeURIComponent(element) + "=" + encodeURIComponent(data[element])
-                )
-            }
-        );
+            let translatedData = translateData(data)
 
-        let body = array.join("&");
-        let xhttp = new XMLHttpRequest();
+            let array = [];
 
-        xhttp.onreadystatechange = function () {
-            if(this.readyState == 4 && this.status == 200){
-              // alert('!')
-            }
-        };
-        xhttp.open('POST', segmentData.ajaxUrl + '?action=send_mail', true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(body);
-        setStep(7);
+            Object.keys(translatedData).forEach(element => {
+
+                    array.push(
+                        encodeURIComponent(element) + "=" + encodeURIComponent(translatedData[element])
+                    )
+                }
+            );
+
+
+            let body = array.join("&");
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200){
+                    console.log('request has been sent')
+                }
+            };
+            xhttp.open('POST', segmentData.ajaxUrl + '?action=send_mail', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(body);
+            setStep(7);
+        }
+
     }
 
     function onInput(e) {
@@ -80,15 +94,15 @@ const SendData = () => {
                 <fieldset className="send-data__inputs">
                     <div className="send-data__input-box quiz__input-box">
                         <p>Введите ваше имя:</p>
-                        <input name="user_name" type="text" onChange={onInput}/>
+                        <input className={isConfirm === false ? '--required' : ''} name="user_name" type="text" onChange={onInput}/>
                     </div>
                     <div className="send-data__input-box quiz__input-box">
                         <p>Введите ваш телефон:</p>
-                        <input name="user_phone" type="text" onChange={onInput}/>
+                        <input className={isConfirm === false ? '--required' : ''} name="user_phone" type="text" onChange={onInput}/>
                     </div>
                     <div className="send-data__input-box quiz__input-box">
                         <p>Введите вашу почту:</p>
-                        <input name="user_mail" type="text" onChange={onInput}/>
+                        <input className={isConfirm === false ? '--required' : ''} name="user_mail" type="text" onChange={onInput}/>
                     </div>
                     <div className="send-data__input-box quiz__input-box">
                         <p>Комментарий (если есть):</p>

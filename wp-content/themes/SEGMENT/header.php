@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html
-    <?php if (is_singular('smi') || is_page('izdat-knigu')) {
-    ?>
+	<?php if (is_singular('smi') || is_page('izdat-knigu')) {
+		?>
       style="height: 100%"
-    <?php
-    }?>
+		<?php
+	}?>
+        lang="ru"
 >
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" lang="ru">
+    <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="/img/icon-logo.svg">
-<!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
-	<?php rel_canonical(); ?>
-    <?php wp_head(); ?>
+    <meta name="google-site-verification" content="ZoQojDDl8DM48u9A35rcJuK8L1RJvrz2s-cq1rAL3ho" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico">
+    <title><?php wp_title(); ?></title>
+    <link rel="canonical" href="<?php echo get_permalink(); ?>">
+
+	<?php wp_head(); ?>
 </head>
 
 <body class="
     <?php
-       if (is_front_page() || is_page('pechat-knig') || is_singular('service')) {
-    ?>
+	if (is_front_page() || is_page('pechat-knig') || is_singular('service')) {
+		?>
     <?php } else { ?>
     common-body
     <?php
-        }
-       ?>
+	}
+?>
 ">
 
 <?php
-    $headerTop = '';
+	$headerTop = '';
 
 	if ( is_user_logged_in() ) {
 		$headerTop = "top: 32px;";
@@ -39,18 +43,18 @@
     <div class="header__line --top">
         <div class="header__container box__container">
             <a class="header__logo"
-               <?php
-                if (is_front_page()) {
-                    ?>
+							<?php
+								if (is_front_page()) {
+									?>
 
-                <?php
-                } else {
-                    ?>
+									<?php
+								} else {
+									?>
 
                     href="<?php echo get_home_url(); ?>"
-                <?php
-                }
-               ?>
+									<?php
+								}
+							?>
 
             >
                 <svg>
@@ -61,27 +65,33 @@
                 <div class="header__text">Отвечаем в</div>
                 <div class="social-links header__social-links">
                     <svg class="soc-link">
-                        <use xlink:href="#icon-telegram" href="#icon-telegram"> </use>
+                        <a href="https://t.me/svetlana_lebed">
+                            <use xlink:href="#icon-telegram" href="#icon-telegram"> </use>
+                        </a>
                     </svg>
                     <svg class="soc-link">
-                        <use xlink:href="#icon-whatsapp" href="#icon-whatsapp"> </use>
+                        <a href="https://wa.me/375296252103/?text=Добрый%20день!%20Я%20по%20поводу%20издания%20книги.%20Меня%20интересует%20вопрос:%20">
+                            <use xlink:href="#icon-whatsapp" href="#icon-whatsapp"> </use>
+                        </a>
                     </svg>
                     <svg class="soc-link">
-                        <use xlink:href="#icon-viber" href="#icon-viber"> </use>
+                        <a href="viber://chat?number=375296252103">
+                            <use xlink:href="#icon-viber" href="#icon-viber"></use>
+                        </a>
                     </svg>
                 </div>
                 <a
-                    href="tel:<?php echo get_field('contacts_mobile','option'); ?>"
-                    class="header__text"
+                        href="tel:<?php echo get_field('contacts_mobile','option'); ?>"
+                        class="header__text"
                 >
-                  <?php echo get_field('contacts_mobile','option'); ?>
+									<?php echo get_field('contacts_mobile','option'); ?>
                 </a>
-                <div class="header__btn btn --call">
+                <a href="<?php echo site_url(); ?>#quiz-form" class="header__btn btn --call">
                     <div class="btn__title">Заказать звонок</div>
-                </div>
-                <div class="header__btn btn">
+                </a>
+                <a href="<?php echo site_url(); ?>#quiz-form" class="header__btn btn">
                     <div class="btn__title">Узнать стоимость</div>
-                </div>
+                </a>
             </div>
             <div class="header__menu-btn-box" id="mobile-menu-btn">
                 <p>Меню</p>
@@ -91,7 +101,29 @@
     </div>
     <div class="header__line --nav">
         <div class="header__nav-container box__container">
-            <?php include get_theme_file_path('./components/nav.php'); ?>
+					<?php include get_theme_file_path('./components/nav.php'); ?>
         </div>
     </div>
 </header>
+
+<?php
+	if (
+	!is_front_page() &&
+	!is_page('pechat-knig') &&
+	!is_singular('service')
+	) {
+?>
+<div class="box breadcrumbs">
+    <div class="box__container">
+        <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+					<?php if(function_exists('bcn_display'))
+					{
+						bcn_display();
+					}?>
+        </div>
+    </div>
+</div>
+
+<?php
+	}
+?>

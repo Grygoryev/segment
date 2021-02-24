@@ -7,7 +7,7 @@
 		<div class="worker__container box__container">
 			<div class="worker__header">
 				<div class="worker__photo">
-					<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+					<img loading="lazy" src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
 				</div>
 				<div class="worker__info">
 					<div class="worker__fio">

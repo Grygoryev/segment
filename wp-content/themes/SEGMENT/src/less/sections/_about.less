@@ -11,12 +11,22 @@
     &__section {
         .mintablet({
             width: 50%;
+            flex-grow: 1;
         })
     }
 
     &__info {
         .mintablet({
             padding-right: 30px;
+        });
+
+        .mindesktop-sm({
+            width: 40%;
+            flex-grow: 0;
+        });
+
+        .mindesktop({
+            width: 50%;
         })
     }
 
@@ -55,5 +65,111 @@
             opacity: 1;
             visibility: visible;
         }
+    }
+}
+
+.count-tab {
+    .flex(space-between, flex-start, row wrap);
+    box-shadow: 0 0 50px rgba(22, 33, 35, 0.07);
+    border-radius: 20px;
+    padding: 25px;
+    background-color: @color-white;
+    position: relative;
+
+    .mintablet({
+
+    });
+
+    .mindesktop-sm({
+        top: 50px;
+        padding: 35px 43px 35px 46px;
+        flex-wrap: nowrap;
+    });
+
+    &__description {
+        .font(18px, 26px);
+        font-family: @font-roboto-medium;
+        position: relative;
+        color: @color-grey;
+        margin-bottom: 69px;
+
+        .mindesktop-sm({
+            .font(24px, 34px);
+            margin-bottom: 69px;
+        });
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 40%;
+            transform: translateX(-65%);
+            width: 83.2px;
+            height: 54.36px;
+            background-image: url('../img/arrow2.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            .mindesktop-sm({
+                left: 45%;
+            });
+        }
+    }
+
+    &__btn {
+        color: @color-white;
+        padding-left: 45px;
+        padding-right: 43px;
+        margin: auto 0 0;
+        width: auto;
+
+        &__title {
+            .font(16px, 27px);
+        }
+    }
+
+    &__section {
+        .flex(flex-start, center, column nowrap);
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: 100%;
+
+        .mindesktop-sm({
+            align-items: flex-start;
+        });
+
+        &.--img {
+            order: 1;
+            width: 80%;
+            text-align: center;
+            margin: 0 auto 20px;
+
+            .mindesktop-sm({
+                order: 2;
+                margin-bottom: 0;
+            });
+        }
+
+        &.--text {
+            order: 2;
+
+            .mindesktop-sm({
+                order: 1;
+            });
+        }
+    }
+
+    img {
+        width: 65%;
+        position: relative;
+        left: -20px;
+        max-width: 281px;
+        max-height: 232px;
+        height: 100%;
+
+        .mindesktop-sm({
+            width: 100%;
+        })
     }
 }

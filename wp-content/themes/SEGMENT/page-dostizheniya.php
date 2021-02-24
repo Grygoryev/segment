@@ -5,7 +5,7 @@
 		<div class="achievments__container box__container">
 			<div class="title-box">
 				<div class="title-box__back"><?php the_title(); ?></div>
-				<div class="title-box__title"><?php the_title(); ?></div>
+				<h1 class="title-box__title"><?php the_title(); ?></h1>
 			</div>
 			<div class="common-description">
                 <?php the_content(); ?>
@@ -29,6 +29,7 @@
                             </div>
                             <div class="achievment__img-box">
                                 <img
+                                    loading="lazy"
                                     src="<?php the_post_thumbnail_url(); ?>"
                                     alt="<?php the_title(); ?>"
                                 >

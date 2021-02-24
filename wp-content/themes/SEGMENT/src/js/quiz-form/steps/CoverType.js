@@ -7,7 +7,12 @@ const CoverType = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        setStep(4)
+
+        if (!data.cover_type) {
+            alert('Для продолжения нужно выбрать один из вариантов')
+        } else {
+            setStep(4)
+        }
     }
 
     function handleChooze(e) {

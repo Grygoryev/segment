@@ -15,6 +15,7 @@
                 </div>
                 <div class="feedback">
                     <img
+                        loading="lazy"
                         class="feedback__img feedback__section"
                         src="<?php echo get_the_post_thumbnail_url(); ?>"
                         alt="<?php the_title(); ?>">

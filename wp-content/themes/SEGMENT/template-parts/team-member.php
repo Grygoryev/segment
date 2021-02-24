@@ -2,12 +2,12 @@
 	<div
 		class="team-member__body"
 	>
-		<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+		<img loading="lazy" src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
 	</div>
 	<div class="team-member__footer">
-		<div class="team-member__name">
+		<h3 class="team-member__name">
 			<?php the_title(); ?>
-		</div>
+		</h3>
 		<div class="team-member__position">
 			<?php the_field('worker_position'); ?>
 		</div>

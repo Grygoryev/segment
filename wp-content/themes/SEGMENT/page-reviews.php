@@ -5,7 +5,7 @@
 	<section class="feedbacks box">
 		<div class="feedbacks__container box__container">
 			<div class="title-box">
-				<div class="title-box__title">Отзывы</div>
+				<h1 class="title-box__title">Отзывы</h1>
 				<div class="title-box__back">Отзывы</div>
 			</div>
 			<div class="common-description">

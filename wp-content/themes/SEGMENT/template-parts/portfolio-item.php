@@ -8,12 +8,12 @@
 >
 
 	<div class="portfolio-item__body">
-		<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+		<img loading="lazy" src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
 	</div>
 	<div class="portfolio-item__footer">
-		<div class="portfolio-item__title">
+		<h2 class="portfolio-item__title">
 			<?php the_title(); ?>
-		</div>
+		</h2>
 		<div class="portfolio-item__description">
 	        <?php echo get_field('portfolio_tab_subtitle'); ?>
 		</div>

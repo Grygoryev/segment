@@ -19,8 +19,10 @@
               <div class="intro__slide swiper-slide">
                   <img class="intro__img --director-img"
                        src="<?php echo $item['slidermain_picture']['sizes']['medium_large']; ?>"
-                       srcset="<?php echo $item['slidermain_picture']['sizes']['large']; ?> 2x"
-                       alt="<?php echo $item['slidermain_title'] ?>">
+                       loading="lazy"
+<!--                       srcset="--><?php //echo $item['slidermain_picture']['sizes']['large']; ?><!-- 2x"-->
+                       alt="<?php echo $item['slidermain_title'] ?>"
+                  >
                   <div class="intro__text-info">
                       <div class="intro__back --from-one-example">
 	                      <?php echo $item['slidermain_title']; ?>

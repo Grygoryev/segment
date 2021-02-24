@@ -4,7 +4,7 @@
 	<section class="inmedia box">
 		<div class="box__container inmedia__container">
 			<div class="title-box">
-				<div class="title-box__title"><?php the_title(); ?></div>
+				<h1 class="title-box__title"><?php the_title(); ?></h1>
 				<div class="title-box__back"><?php the_title(); ?></div>
 			</div>
 			<div class="inmedia__description">

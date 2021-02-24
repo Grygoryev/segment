@@ -4,14 +4,14 @@ import {StateContext} from "../contexts/stateContext"
 const BookSize = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
-    let [customMode, setCustomMode] = useState(false);
+    let [customMode, setCustomMode] = useState(null);
 
     let fromPage = document.getElementById('quiz-form').dataset.pageUrl
 
     useEffect( () => {
         setData({
             ...data,
-            fromPage
+            from_page: fromPage
         })
 
     }, [fromPage])
@@ -19,7 +19,11 @@ const BookSize = () => {
     let handleSubmit = (e) => {
         e.preventDefault();
 
-        setStep(2)
+        if (!data.book_size) {
+            alert('Для продолжения нужно выбрать один из вариантов')
+        } else {
+            setStep(2)
+        }
     }
 
     useEffect(() => {
@@ -31,7 +35,7 @@ const BookSize = () => {
 
         setData({
             ...data,
-            'book_size': e.target.value
+            book_size: e.target.value
         })
 
     }
@@ -88,18 +92,18 @@ const BookSize = () => {
             </header>
             <form className="book-size" onSubmit={handleSubmit}>
                <div className="book-size__container">
-                    <label className="book-size__item quiz__card">
+                    <label className="book-size__item quiz__card --A6">
                         <div className="book-size__body">
-                            <img src={segmentData.themeUrl + "/img/quiz/A6.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A6.png"} alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A6" checked={data.book_size === 'A6'} name="book_size" onChange={setBookSize} />
                             <h5 className=""><span>A6</span> 102x142 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz__card">
+                    <label className="book-size__item quiz__card --A5">
                         <div className="book-size__body">
-                            <img src={segmentData.themeUrl + "/img/quiz/A5.png"} title="" alt="" />
+                            <img src={segmentData.themeUrl + "/img/quiz/A5.png"} alt="" />
                         </div>
                         <div className="book-size__footer">
                             <input type="radio" name="book_size" value="A5" name="book_size" onClick={setBookSize}/>

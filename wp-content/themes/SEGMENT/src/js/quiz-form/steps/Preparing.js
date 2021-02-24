@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
 
 const Preparing = () => {
@@ -8,12 +8,17 @@ const Preparing = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        setStep(6)
 
         setData({
             ...data,
             book_preparing_before_painting: localAnswers
         })
+
+        if (!localAnswers.length) {
+            alert('Для продолжения нужно выбрать один из вариантов')
+        } else {
+            setStep(6)
+        }
     }
 
     function handleChooze(e) {

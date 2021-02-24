@@ -12,6 +12,7 @@
             <div class="portfolio-info">
                 <div class="portfolio-info__section --img">
                     <img
+                        loading="lazy"
                         src="<?php echo get_the_post_thumbnail_url(); ?>"
                         alt="<?php the_title();?>"
                     />
@@ -65,8 +66,6 @@
 
 <?php
 	}
-	get_template_part('template-parts/slider-common');
-	get_template_part('template-parts/video-frame-common');
 	include get_theme_file_path('/components/quiz-form.php');
 
 	get_footer();
