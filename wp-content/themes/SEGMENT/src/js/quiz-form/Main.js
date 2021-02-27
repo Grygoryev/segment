@@ -25,7 +25,7 @@ const Main = () => {
             <div className="quiz__main-container --quiz-bordered">
                 <p className="quiz__top-signature"><span>Узнайте</span> стоимость вашего творения</p>
                 {(()=> {
-                    switch(step) {
+                    switch(3) {
                         case(1):
                             return <BookSize/>
                         case(2): 

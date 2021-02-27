@@ -45,11 +45,6 @@ const PaperType = () => {
                 </div>
             </header>
             <form className="quiz__form paper-type" onSubmit={handleSubmit}>
-
-                    <div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
-                    {/*<div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''} ${isDensityHighlighted ? '--highlighted' : ''}`}>*/}
-                        <PaperDensity paperType={data.paper_type} />
-                    </div>
                 <div className="quiz__cards paper-type__cards">
                     <label className="quiz__card paper-type__card">
                         <div className="paper-type__img-box">
@@ -79,9 +74,27 @@ const PaperType = () => {
                         </footer>
                     </label>
                 </div>
+                <div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
+                    <PaperDensity paperType={data.paper_type} />
+                </div>
+                <div className={`paper-type-colorful-pages ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Есть ли цветные страницы внутри?</span>
+                    </label>
+                    <div className="paper-type-colorful-pages">
+                        <label htmlFor="">
+                            <span>Количество страниц:</span>
+                            <div className="input-box">
+                                <input type="text"/>
+                                <span>стр.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
                 <div className="quiz__buttons">
                     <button className="quiz__btn --back btn" onClick={() => setStep(3)}>Назад</button>
-                    <button className="quiz__btn btn" type="submit">Далее</button>
+                    <button className="quiz__btn --forward btn" type="submit">Далее</button>
                 </div>
             </form>
         </React.Fragment>

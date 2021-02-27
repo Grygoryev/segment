@@ -12,10 +12,11 @@
 
 		<div class="intro__slide --visible">
 			<img
-                loading="lazy"
 				class="intro__img"
 				src="<?php echo $slide['top_slide_img']; ?>"
-				alt="<?php echo $slide['top_slide_alt']; ?>">
+				alt="<?php echo $slide['top_slide_alt']; ?>"
+                loading="lazy"
+            />
 			<div class="intro__text-info">
 				<div class="intro__back">
 					<?php echo $slide['top_slide_title_back']; ?>

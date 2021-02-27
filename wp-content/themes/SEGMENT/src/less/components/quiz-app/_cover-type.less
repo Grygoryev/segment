@@ -9,6 +9,7 @@
 
     .mintablet({
       .font(28px, 36px);
+      margin-bottom: 50px;
     });
 
     span
@@ -30,8 +31,10 @@
   
   &__micro-option
   {
+    padding-bottom: 0;
+    position: relative;
+
     .mintablet({
-      width: 17%;
       margin-left: 10px;
       margin-right: 10px;
     });
@@ -39,10 +42,75 @@
     img 
     {
       border-radius: 50%;
+      width: 64px;
+      height: 64px;
+    }
+
+    .quiz__card-footer {
+      .font(14px, 20px);
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-10%);
+      transform-origin: 0 0;
+      height: 48px;
+      width: 80px;
+      background-repeat: no-repeat;
+      display: none;
 
       .mintablet({
-        max-width: 50%;
+        display: block;
       });
+    }
+
+    &.--kleevoy {
+      &::after {
+        background-image: url('../img/arrow-covertype-1.png');
+      }
+    }
+    &.--proshitiy {
+      &::after {
+        background-image: url('../img/arrow-covertype-2.png');
+      }
+    }
+
+    &.--skoba {
+      &::after {
+        background-image: url('../img/arrow-covertype-2.png');
+        transform: scale(-1, 1) translateX(-10%);
+      }
+    }
+
+    &.--pruzhina {
+      &::after {
+        background-image: url('../img/arrow-covertype-1.png');
+        transform: scale(-1, 1) translateX(-10%);
+      }
+    }
+
+    &.--tsvetnoy {
+      &::after {
+        background-image: url('../img/arrow-covertype-hard-1.png');
+      }
+    }
+
+    &.--leisure {
+      &::after {
+        background-image: url('../img/arrow-covertype-hard-2.png');
+      }
+    }
+
+    &.--integralny {
+      &::after {
+        background-image: url('../img/arrow-covertype-hard-1.png');
+        transform: scale(-1, 1) translateX(-10%);
+      }
     }
   }
 }

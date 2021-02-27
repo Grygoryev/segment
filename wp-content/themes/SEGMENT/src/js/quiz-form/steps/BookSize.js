@@ -93,7 +93,7 @@ const BookSize = () => {
             <form className="book-size" onSubmit={handleSubmit}>
                <div className="book-size__container">
                     <label className="book-size__item quiz__card --A6">
-                        <div className="book-size__body">
+                        <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A6.png"} alt="" />
                         </div>
                         <div className="book-size__footer">
@@ -102,7 +102,7 @@ const BookSize = () => {
                         </div>
                     </label>
                     <label className="book-size__item quiz__card --A5">
-                        <div className="book-size__body">
+                        <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A5.png"} alt="" />
                         </div>
                         <div className="book-size__footer">
@@ -111,7 +111,7 @@ const BookSize = () => {
                         </div>
                     </label>
                     <label className="book-size__item quiz__card">
-                        <div className="book-size__body">
+                        <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A4.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
@@ -120,7 +120,7 @@ const BookSize = () => {
                         </div>
                     </label>
                     <label className="book-size__item quiz__card">
-                        <div className="book-size__body">
+                        <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>
                         <div className="book-size__footer">
@@ -130,7 +130,7 @@ const BookSize = () => {
                     </label>
                     { customMode ? customFields : ''}
                </div>
-               <button className="quiz__btn btn" type="submit">Далее</button>
+               <button className="quiz__btn --forward btn" type="submit">Далее</button>
             </form>
         </Fragment>
     )

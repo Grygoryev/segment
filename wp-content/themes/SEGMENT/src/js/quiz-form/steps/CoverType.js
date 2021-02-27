@@ -52,26 +52,26 @@ const CoverType = () => {
                     <fieldset className="cover-type__macro-option">
                         <h4 className="cover-type__option-title">Мягкий <span>переплёт</span></h4>
                         <div className="cover-type__micro-options quiz__cards">
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --kleevoy">
                                 <div className="quiz__card-body">
                                     <img src={segmentData.themeUrl + "/img/quiz/soft_kleevoy.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
-                                    <p> КБС <br/>(клеевой)</p>
+                                    <p>Клеевой </p>
                                     <input type="radio" name="soft" checked={data.cover_type_species == 'KBS_kleevoy'} value="KBS_kleevoy" onChange={ handleChooze} />
 
                                 </footer>
                             </label>
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --proshitiy">
                                 <div className="quiz__card-body">
                                     <img src={segmentData.themeUrl + "/img/quiz/soft_proshitiy.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
-                                    <p> КШС <br/>(прошитый)</p>
+                                    <p> Прошитый </p>
                                     <input type="radio" name="soft" checked={data.cover_type_species == 'KSHS_proshitiy'} value="KSHS_proshitiy" onChange={ handleChooze} />
                                 </footer>
                             </label>
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --skoba">
                                 <div className="quiz__card-body">   
                                     <img src={segmentData.themeUrl + "/img/quiz/soft_skoba.png"} alt="" title=""/>
                                 </div>
@@ -80,7 +80,7 @@ const CoverType = () => {
                                     <input type="radio" name="soft" checked={data.cover_type_species == 'skoba'} value="skoba" onChange={ handleChooze} />
                                 </footer>
                             </label>
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --pruzhina">
                                 <div className="quiz__card-body">
                                     <img src={segmentData.themeUrl + "/img/quiz/soft_pruzhina.png"} alt="" title=""/>
                                 </div>
@@ -94,25 +94,25 @@ const CoverType = () => {
                     <fieldset className="cover-type__macro-option">
                         <h4 className="cover-type__option-title">Твёрдый <span>переплёт</span></h4>
                         <div className="cover-type__micro-options quiz__cards">
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --tsvetnoy">
                                 <div className="quiz__card-body">
                                     <img src={segmentData.themeUrl + "/img/quiz/hard_colorful.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
-                                    <p> 7БЦ <br/>(цветной)</p>
+                                    <p> 7БЦ (цветной)</p>
                                     <input type="radio" name="hard" checked={data.cover_type_species == 'colorful'} value="colorful" onChange={ handleChooze} />
                                 </footer>
                             </label>
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --leisure">
                                 <div className="quiz__card-body">
                                     <img src={segmentData.themeUrl + "/img/quiz/hard_leisure.png"} alt="" title=""/>
                                 </div>
                                 <footer className="quiz__card-footer">
-                                    <p> 7Б <br/>(под кожу)</p>
+                                    <p> 7Б (под кожу)</p>
                                     <input type="radio" name="hard" checked={data.cover_type_species == '7b_leisure'} value="7b_leisure" onChange={ handleChooze} />
                                 </footer>
                             </label>
-                            <label className="cover-type__micro-option quiz__card">
+                            <label className="cover-type__micro-option quiz__card --integralny">
                                 <div className="quiz__card-body">   
                                     <img src={segmentData.themeUrl + "/img/quiz/hard_integralny.png"} alt="" title=""/>
                                 </div>
@@ -126,7 +126,7 @@ const CoverType = () => {
                 </div>
                 <div className="quiz__buttons">
                     <button className="quiz__btn --back btn" onClick={() => setStep(2)}>Назад</button>
-                    <button className="quiz__btn btn" type="submit">Далее</button>
+                    <button className="quiz__btn --forward btn" type="submit">Далее</button>
                 </div>
             </form>
         </React.Fragment>

@@ -20,7 +20,7 @@
                   <img class="intro__img --director-img"
                        src="<?php echo $item['slidermain_picture']['sizes']['medium_large']; ?>"
                        loading="lazy"
-<!--                       srcset="--><?php //echo $item['slidermain_picture']['sizes']['large']; ?><!-- 2x"-->
+                       srcset="<?php echo $item['slidermain_picture']['sizes']['large']; ?> 2x"
                        alt="<?php echo $item['slidermain_title'] ?>"
                   >
                   <div class="intro__text-info">

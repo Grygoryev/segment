@@ -12,7 +12,7 @@ const Aside = () => {
         giftTitle = <p><span>Ваш</span> <br/> подарок:</p>
         giftImg = <img src={segmentData.themeUrl + "/img/quiz/ibsn.png"} alt=""/>
     } else {
-        giftTitle = <p>По завершении формы <br/> вы получите:</p>
+        giftTitle = <>По завершении формы <br/> вы получите:</>
         giftImg = <img src={segmentData.themeUrl + "/img/quiz/gift-img.png"} alt=""/>
     }
 
@@ -21,7 +21,7 @@ const Aside = () => {
           <aside className="quiz-aside">
               <img src={segmentData.themeUrl + "/img/quiz/director.png"} alt=""/>
               <h4>Дмитрий Сакович</h4>
-              <p>
+              <p className="quiz-aside__signature">
                   Директор издательского дома
                   <br/>
                   "Сегмент"

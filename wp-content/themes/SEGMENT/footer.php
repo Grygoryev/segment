@@ -104,6 +104,7 @@
 </footer>
 
 <?php
+	include get_theme_file_path('./components/popup.php');
 	include get_theme_file_path('./components/icons.php');
 	wp_footer();
 ?>

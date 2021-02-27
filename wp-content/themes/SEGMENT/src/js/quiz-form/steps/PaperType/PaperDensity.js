@@ -24,7 +24,7 @@ export const PaperDensity = ({paperType}) => {
             options = (
                 <>
                     <div onClick={chooseDensity} data-value="130">
-                        130 гр/м кв.
+                        130 гр/м кв. (стандартная)
                     </div>
                     <div onClick={chooseDensity} data-value="150">
                         150 гр/м кв.
@@ -55,6 +55,7 @@ export const PaperDensity = ({paperType}) => {
             <div className="paper-density__title"> Плотность бумаги: </div>
             <div className={`paper-density__current ${isDensityHighlighted ? '--highlighted' : ''} `} onClick={() => setChooserVisible(true)}>
                 {data.paper_density ? data.paper_density + " гр/м кв." : "--"}
+                <div className={`paper-density__arrow-indicator ${isChooserVisible ? '--active' : ''}`}/>
             </div>
             <div className={`paper-density__list ${isChooserVisible ? '--active' : ''}`}>
                 {options}

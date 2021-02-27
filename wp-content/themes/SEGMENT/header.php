@@ -86,9 +86,9 @@
                 >
 									<?php echo get_field('contacts_mobile','option'); ?>
                 </a>
-                <a href="<?php echo site_url(); ?>#quiz-form" class="header__btn btn --call">
+                <div id="order-call" class="header__btn btn --call">
                     <div class="btn__title">Заказать звонок</div>
-                </a>
+                </div>
                 <a href="<?php echo site_url(); ?>#quiz-form" class="header__btn btn">
                     <div class="btn__title">Узнать стоимость</div>
                 </a>

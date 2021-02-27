@@ -64,7 +64,7 @@ const EditionParams = () => {
                 </div>
                 <div className="quiz__buttons">
                     <button className="quiz__btn --back btn" onClick={() => setStep(1)}>Назад</button>
-                    <button className="quiz__btn btn" type="submit">Далее</button>
+                    <button className="quiz__btn --forward btn" type="submit">Далее</button>
                 </div>
             </form>
         </React.Fragment>

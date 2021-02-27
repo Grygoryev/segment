@@ -131,7 +131,7 @@ const SendData = () => {
                 </fieldset>
                 <div className="quiz__buttons">
                     <button className="quiz__btn --back btn" onClick={() => setStep(5)}>Назад</button>
-                    <button className="quiz__btn btn" type="submit">Получить расчёт</button>
+                    <button className="quiz__btn --forward btn" type="submit">Получить расчёт</button>
                 </div>
             </form>
         </React.Fragment>

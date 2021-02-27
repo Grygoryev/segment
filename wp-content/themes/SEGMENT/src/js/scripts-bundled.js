@@ -7,6 +7,7 @@ import { headerTabs } from "@/js/modules/headerTabs";
 import {deliveryController} from "@/js/modules/deliveryController";
 import { commonSliderController } from "@/js/modules/commonSliderController";
 import { replaceBRinBreadcrumbs } from "@/js/modules/features";
+import { orderCall } from "@/js/modules/orderCall";
 
 function init() {
     headerController();
@@ -17,6 +18,7 @@ function init() {
     deliveryController();
     commonSliderController();
     replaceBRinBreadcrumbs();
+    orderCall();
 }
 
 init()
