@@ -18,7 +18,7 @@ const Aside = () => {
 
     return (
         <React.Fragment>
-          <aside className="quiz-aside">
+          <aside className="quiz-aside --quiz-bordered">
               <img src={segmentData.themeUrl + "/img/quiz/director.png"} alt=""/>
               <h4>Дмитрий Сакович</h4>
               <p className="quiz-aside__signature">

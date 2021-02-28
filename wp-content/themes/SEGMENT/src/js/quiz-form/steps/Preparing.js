@@ -1,5 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
+import Header from "@/js/quiz-form/components/Header";
+import StepButtons from "@/js/quiz-form/components/StepButtons";
 
 const Preparing = () => {
     let {setStep} = useContext(StateContext);
@@ -31,17 +33,7 @@ const Preparing = () => {
 
     return (
         <React.Fragment>
-            <header className="quiz__header">
-                <h3 className="quiz__title">Допечатная <span>подготовка:</span></h3>
-                <div className="quiz-progress-bar">
-                    <div className="quiz-progress-bar__title">
-                        Шаг 5 из 6
-                    </div>
-                    <div className="quiz-progress-bar__bar">
-                        <span className="quiz-progress-bar__bar-fullfilment --step5"></span>
-                    </div>
-                </div>
-            </header>
+            <Header step={5} title='Допечатная' spanInTitle='подготовка:' />
             <form className="quiz__form preparing" onSubmit={handleSubmit}>
                 <div className="preparing__container">
                     <div className="preparing__img-box">
@@ -70,10 +62,7 @@ const Preparing = () => {
                         </label>
                     </fieldset>
                 </div>
-                <div className="quiz__buttons">
-                    <button className="quiz__btn --back btn" onClick={() => setStep(4)}>Назад</button>
-                    <button className="quiz__btn --forward btn" type="submit">Далее</button>
-                </div>
+                <StepButtons prevStep={4} />
             </form>
         </React.Fragment>
     )

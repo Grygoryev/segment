@@ -20,11 +20,22 @@
         cursor: pointer;
         flex-shrink: 0;
         .flex_column();
+        position: relative;
 
         .mintablet({
             width: 23%;
             margin: 0 0 20px;
         });
+
+        &-label {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            .font(12px, 1);
+            font-family: @font-roboto-regular;
+            color: @color-black;
+        }
 
         img 
         {
@@ -36,6 +47,7 @@
         }
 
         &.--A5 {
+
             img {
                 max-width: 60%;
             }
@@ -59,9 +71,13 @@
         padding: 13px 10px;
         text-align: center;
         .font(16px, 20px);
-        border-top: 1px solid rgba(@color-ocean, 0.2);
+        border-top: 1px solid #e8e8e8;
         .flex(center, center, row nowrap);
         margin-top: auto;
+
+        h5 {
+            font-family: @font-roboto-light;
+        }
 
         input
         {

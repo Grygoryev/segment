@@ -1,70 +1,7 @@
-.paper-type {
-
-  &__img-box
-  {
-    height: 115px;
-  }
-
-  &__img
-  {
-    width: 100%;
-    height: 100%;
-  }
-
-  &__cards
-  {
-    margin-bottom: 25px;
-
-    .mintablet({
-      justify-content: flex-start;
-    });
-  }
-
-  &__card
-  {
-    width: 43%;
-    margin: 0 10px 20px;
-
-    .mintablet({
-      width: 25%;
-    });
-  }
-
-  &__card-footer
-  {
-    border-top: none;
-  }
-}
-
-.paper-density {
-  margin-bottom: 20px;
+.quiz-select {
+  width: 100%;
   position: relative;
-
-  &.--open {
-  }
-
-  &__title {
-    margin-bottom: 5px;
-    text-align: left;
-  }
-
-  select {
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(@color-black, 0.3);
-    border: none;
-    padding: 12px 25px 12px 10px;
-    .font(16px, 1);
-    width: 100%;
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  &__chooser {
-    width: 100%;
-    position: relative;
-  }
+  color: @color-black;
 
   &__current {
     border-radius: 5px;
@@ -75,13 +12,14 @@
     width: 100%;
     cursor: pointer;
     position: relative;
+    min-height: 40px;
 
     &.--highlighted {
       border: 1px solid @color-red;
     }
   }
 
-  .paper-density__arrow-indicator {
+  &__arrow-indicator {
     position: absolute;
     right: 12px;
     top: 50%;
@@ -122,9 +60,11 @@
     transition: 300ms all;
     background-color: @color-white;
     font-family: @font-roboto-regular;
+    box-shadow: 0 0 32px 6px rgba(#444242, 0.15);
+    border-radius: 5px;
 
     &.--active {
-      z-index: 1;
+      z-index: 11;
       opacity: 1;
       visibility: visible;
     }

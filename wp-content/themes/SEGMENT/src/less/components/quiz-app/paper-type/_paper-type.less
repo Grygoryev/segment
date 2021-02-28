@@ -1,0 +1,61 @@
+.paper-type {
+
+  &__img-box
+  {
+    height: 115px;
+  }
+
+  &__img
+  {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__cards
+  {
+    margin-bottom: 15px;
+
+    .mintablet({
+      justify-content: flex-start;
+    });
+  }
+
+  &__card
+  {
+    width: 48%;
+    margin: 0 0 20px;
+    max-width: 145px;
+
+    .minmob-s({
+      margin: 0 15px 20px;
+    });
+
+    .mintablet({
+      width: 25%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    });
+  }
+
+  &__card-footer
+  {
+    border-top: none;
+  }
+
+  .paper-density,
+  .is-cp,
+  .quiz-buttons {
+
+    .minmob-s({
+      padding-left: 20px;
+      padding-right: 20px;
+    });
+
+    .mintablet({
+      padding-left: 0;
+      padding-right: 0;
+    })
+  }
+}

@@ -1,14 +1,12 @@
 import React, {useContext} from 'react'
 import {StateContext} from "../contexts/stateContext"
+import Header from "@/js/quiz-form/components/Header";
 
 const Final = () => {
-    let {setStep} = useContext(StateContext)
 
     return (
         <React.Fragment>
-            <header className="quiz__header">
-                <h3 className="quiz__title">Отлично, <span>ваши данные приняты! </span></h3>
-            </header>
+            <Header step={false} title='Отлично,' spanInTitle='ваши данные приняты!' />
             <div className="final">
                 <div className="final__pic">
                     <img src={segmentData.themeUrl + "/img/quiz/ok.svg"} alt=""/>
@@ -22,11 +20,7 @@ const Final = () => {
                         <a href="tel:+375447786002"> +375 44 778-60-02 </a>
                     </p>
                 </div>
-                <div className="quiz__buttons">
-                    <button className="quiz__btn --back btn" onClick={() => setStep(6)}>Назад</button>
-                </div>
             </div>
-
         </React.Fragment>
     )
 }

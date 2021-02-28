@@ -1,5 +1,7 @@
 import React, {Fragment, useState, useContext, useEffect} from 'react'
 import {StateContext} from "../contexts/stateContext"
+import StepButtons from "@/js/quiz-form/components/StepButtons";
+import Header from "@/js/quiz-form/components/Header";
 
 const BookSize = () => {
     let {setStep} = useContext(StateContext);
@@ -62,14 +64,14 @@ const BookSize = () => {
         <div className="book-size__custom">
             <div className="book-size__custom-section">
                 <p>Ширина книги:</p>
-                <div className="quiz__input-box">
+                <div className="quiz-input-box">
                     <input type="text" name="custom_width" onChange={e => onInput(e)} />
                     <span>мм</span>
                 </div>
             </div>
             <div className="book-size__custom-section">
                 <p>Высота:</p>
-                <div className="quiz__input-box">
+                <div className="quiz-input-box">
                     <input type="text" name="custom_height" onChange={e => onInput(e)} />
                     <span>мм</span>
                 </div>
@@ -79,20 +81,10 @@ const BookSize = () => {
 
     return (
         <Fragment>
-            <header className="quiz__header">
-                <h3 className="quiz__title">Выберите формат <span>книги:</span></h3>
-                <div className="quiz-progress-bar">
-                    <div className="quiz-progress-bar__title">
-                        Шаг 1 из 6
-                    </div>
-                    <div className="quiz-progress-bar__bar">
-                        <span className="quiz-progress-bar__bar-fullfilment --step1"></span>
-                    </div>
-                </div>
-            </header>
+            <Header step={1} title='Выберите формат' spanInTitle='книги:' />
             <form className="book-size" onSubmit={handleSubmit}>
                <div className="book-size__container">
-                    <label className="book-size__item quiz__card --A6">
+                    <label className="book-size__item quiz-card --A6">
                         <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A6.png"} alt="" />
                         </div>
@@ -101,8 +93,9 @@ const BookSize = () => {
                             <h5 className=""><span>A6</span> 102x142 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz__card --A5">
+                    <label className="book-size__item quiz-card --A5">
                         <div className="book-size__item-body">
+                            <p className="book-size__item-label">Стандартный</p>
                             <img src={segmentData.themeUrl + "/img/quiz/A5.png"} alt="" />
                         </div>
                         <div className="book-size__footer">
@@ -110,7 +103,7 @@ const BookSize = () => {
                             <h5 className=""><span>A5</span> 145x205 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz__card">
+                    <label className="book-size__item quiz-card">
                         <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A4.png"} title="" alt="" />
                         </div>
@@ -119,7 +112,7 @@ const BookSize = () => {
                             <h5 className=""><span>A4</span> 210x297 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz__card">
+                    <label className="book-size__item quiz-card">
                         <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>
@@ -130,7 +123,7 @@ const BookSize = () => {
                     </label>
                     { customMode ? customFields : ''}
                </div>
-               <button className="quiz__btn --forward btn" type="submit">Далее</button>
+               <StepButtons />
             </form>
         </Fragment>
     )

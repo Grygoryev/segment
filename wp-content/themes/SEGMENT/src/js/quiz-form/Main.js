@@ -9,7 +9,7 @@ import SendData from "@/js/quiz-form/steps/SendData";
 import Final from "@/js/quiz-form/steps/Final";
 import Aside from "@/js/quiz-form/Aside";
 import {correctView} from "@/js/quiz-form/helpers/correctView";
-import HighlightDensityContextProvider from "@/js/quiz-form/contexts/highlightDensity";
+import PaperTypeContextProvider from "@/js/quiz-form/contexts/paperTypeContext";
 
 const Main = () => {
     let {step} = useContext(StateContext);
@@ -22,10 +22,10 @@ const Main = () => {
 
     return (
         <div className="quiz">
-            <div className="quiz__main-container --quiz-bordered">
+            <div className="quiz__main --quiz-bordered">
                 <p className="quiz__top-signature"><span>Узнайте</span> стоимость вашего творения</p>
                 {(()=> {
-                    switch(3) {
+                    switch(6) {
                         case(1):
                             return <BookSize/>
                         case(2): 
@@ -34,9 +34,9 @@ const Main = () => {
                              return <CoverType/>
                         case(4):
                             return (
-                                <HighlightDensityContextProvider>
+                                <PaperTypeContextProvider>
                                     <PaperType/>
-                                </HighlightDensityContextProvider>
+                                </PaperTypeContextProvider>
                             )
                         case(5): 
                             return <Preparing/>
@@ -47,9 +47,7 @@ const Main = () => {
                     }
                 })()}
             </div>
-            <div className="quiz__aside-container --quiz-bordered">
-                <Aside />
-            </div>
+            <Aside />
       </div>
     )
 }

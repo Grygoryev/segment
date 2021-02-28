@@ -1,11 +1,11 @@
 import React, { useContext, useState} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
-import {HighlightDensityContext} from "@/js/quiz-form/contexts/highlightDensity";
+import {PaperTypeContext} from "@/js/quiz-form/contexts/paperTypeContext";
 
-export const PaperDensity = ({paperType}) => {
+export const PaperDensity = () => {
     const {data, setData} = useContext(StateContext)
     let [isChooserVisible, setChooserVisible] = useState(false)
-    let {isDensityHighlighted, highlightDensity} = useContext(HighlightDensityContext)
+    let {isDensityHighlighted, highlightDensity} = useContext(PaperTypeContext)
 
     function chooseDensity(e) {
         setData({
@@ -19,7 +19,7 @@ export const PaperDensity = ({paperType}) => {
 
     let options
 
-    switch (paperType) {
+    switch (data.paper_type) {
         case 'melovan':
             options = (
                 <>
@@ -51,14 +51,16 @@ export const PaperDensity = ({paperType}) => {
     }
 
     return (
-        <div className="paper-density__chooser">
-            <div className="paper-density__title"> Плотность бумаги: </div>
-            <div className={`paper-density__current ${isDensityHighlighted ? '--highlighted' : ''} `} onClick={() => setChooserVisible(true)}>
-                {data.paper_density ? data.paper_density + " гр/м кв." : "--"}
-                <div className={`paper-density__arrow-indicator ${isChooserVisible ? '--active' : ''}`}/>
-            </div>
-            <div className={`paper-density__list ${isChooserVisible ? '--active' : ''}`}>
-                {options}
+        <div className={`paper-density ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
+            <div className="paper-density__chooser quiz-select">
+                <div className="paper-density__title"> Плотность бумаги: </div>
+                <div className={`quiz-select__current ${isDensityHighlighted ? '--highlighted' : ''} `} onClick={() => setChooserVisible(!isChooserVisible)}>
+                    {data.paper_density ? data.paper_density + " гр/м кв." : "--"}
+                    <div className={`quiz-select__arrow-indicator ${isChooserVisible ? '--active' : ''}`}/>
+                </div>
+                <div className={`quiz-select__list ${isChooserVisible ? '--active' : ''}`}>
+                    {options}
+                </div>
             </div>
         </div>
     )

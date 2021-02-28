@@ -41,6 +41,10 @@ function replaceKeyValue(value) {
             return value = 'Офсeтная'
         case 'melovan':
             return value = 'Мелованная'
+        case false:
+            return value = 'Нет'
+        case true:
+            return value = 'Да'
         default:
             return value
     }
@@ -66,8 +70,12 @@ function replaceKey(key) {
             return key = 'Тип бумаги'
         case 'paper_density':
             return key = 'Плотность бумаги'
+        case 'is_colorful_pages':
+            return key = 'Цветные страницы?'
         case 'how_many_colorful_pages':
             return key = 'Количество цветных страниц'
+        case 'colorful_pages_order':
+            return key = 'Порядок цветных страниц'
         case 'book_preparing_before_painting':
             return key = 'Допечатная подготовка книги'
         case 'user_name':

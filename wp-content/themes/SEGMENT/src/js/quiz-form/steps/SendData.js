@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
 import {translateData} from "@/js/quiz-form/helpers/translateData";
+import StepButtons from "@/js/quiz-form/components/StepButtons";
+import Header from "@/js/quiz-form/components/Header";
 
 const SendData = () => {
     let {setStep} = useContext(StateContext);
@@ -78,33 +80,23 @@ const SendData = () => {
 
     return (
         <React.Fragment>
-            <header className="quiz__header">
-                <h3 className="quiz__title">Остался <span>завершающий шаг</span></h3>
-                <div className="quiz-progress-bar">
-                    <div className="quiz-progress-bar__title">
-                        Шаг 6 из 6
-                    </div>
-                    <div className="quiz-progress-bar__bar">
-                        <span className="quiz-progress-bar__bar-fullfilment --step6"></span>
-                    </div>
-                </div>
-            </header>
+            <Header step={6} title='Остался' spanInTitle='завершающий шаг' />
             <form className="quiz__form send-data" onSubmit={handleSubmit}>
                 <h4 className="send-data__title">Куда отправить <span>расчёт?</span></h4>
                 <fieldset className="send-data__inputs">
-                    <div className="send-data__input-box quiz__input-box">
+                    <div className="send-data__input-box quiz-input-box">
                         <p>Введите ваше имя:</p>
                         <input className={isConfirm === false ? '--required' : ''} name="user_name" type="text" onChange={onInput}/>
                     </div>
-                    <div className="send-data__input-box quiz__input-box">
+                    <div className="send-data__input-box quiz-input-box">
                         <p>Введите ваш телефон:</p>
                         <input className={isConfirm === false ? '--required' : ''} name="user_phone" type="text" onChange={onInput}/>
                     </div>
-                    <div className="send-data__input-box quiz__input-box">
+                    <div className="send-data__input-box quiz-input-box">
                         <p>Введите вашу почту:</p>
                         <input className={isConfirm === false ? '--required' : ''} name="user_mail" type="text" onChange={onInput}/>
                     </div>
-                    <div className="send-data__input-box quiz__input-box">
+                    <div className="send-data__input-box quiz-input-box">
                         <p>Комментарий (если есть):</p>
                         <textarea name="user_comment" type="text" rows="6" onChange={onInput}/>
                     </div>
@@ -129,10 +121,7 @@ const SendData = () => {
                         </div>
                     </div>
                 </fieldset>
-                <div className="quiz__buttons">
-                    <button className="quiz__btn --back btn" onClick={() => setStep(5)}>Назад</button>
-                    <button className="quiz__btn --forward btn" type="submit">Получить расчёт</button>
-                </div>
+                <StepButtons prevStep={5} />
             </form>
         </React.Fragment>
     )
