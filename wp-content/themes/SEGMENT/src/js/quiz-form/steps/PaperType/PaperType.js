@@ -14,12 +14,15 @@ const PaperType = () => {
     let handleSubmit = (e) => {
         e.preventDefault();
 
+        console.log(data.is_colorful_pages)
+        console.log('? ' + data.how_many_colorful_pages)
+
         if (!data.paper_type) {
             alert('Для продолжения нужно выбрать один из вариантов')
         } else if (data.paper_type !== 'unknown' && !data.paper_density) {
             alert('Выберите, пожалуйста, плотность бумаги')
             highlightDensity(true)
-        } else if (!data.is_colorful_pages && data.how_many_colorful_pages === '') {
+        } else if (data.is_colorful_pages && data.how_many_colorful_pages === '') {
             alert('Введите, пожалуйста, число цветных страниц')
             setColorfulHighlighted(true)
         } else {
@@ -68,8 +71,10 @@ const PaperType = () => {
                         </footer>
                     </label>
                 </div>
-                <PaperDensity />
-                <PaperChooseColorful />
+                <div className="paper-type__settings">
+                    <PaperDensity />
+                    <PaperChooseColorful />
+                </div>
                 <StepButtons prevStep={3} />
             </form>
         </React.Fragment>

@@ -18,6 +18,8 @@ const StateContextProvider = ({children}) => {
         how_many_colorful_pages: '',
         colorful_pages_order: '',
         book_preparing_before_painting: '',
+        how_many_painter_illustrations: '',
+        size_of_painter_illustrations: '',
         user_name: '',
         user_phone: '',
         user_email: '',

@@ -1,6 +1,6 @@
 /* is-cp = Is there colorful pages */
 .is-cp {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   .font(16px, 24px);
   color: @color-black;
   text-align: left;
@@ -12,7 +12,6 @@
 
   .quiz-select {
     width: 50%;
-    min-height: 40px;
   }
 
   &__title {
@@ -31,7 +30,6 @@
     flex-flow: column nowrap;
     display: none;
     margin-bottom: 20px;
-    width: 80%;
 
     .mintablet({
       flex-flow: row nowrap;
@@ -39,11 +37,26 @@
     });
 
     label {
-      margin-right: 30px;
+      .mintablet({
+        width: auto;
+      });
     }
 
     &.--open {
       display: flex;
+    }
+  }
+
+  &__section {
+    flex-grow: 1;
+
+    &.--quantity {
+      margin-right: 30px;
+      max-width: 195px;
+
+      .mintablet({
+        max-width: none;
+      });
     }
   }
 
@@ -60,7 +73,7 @@
 
     input {
       margin-right: 5px;
-      max-width: 180px;
+      width: 100%;
     }
   }
 

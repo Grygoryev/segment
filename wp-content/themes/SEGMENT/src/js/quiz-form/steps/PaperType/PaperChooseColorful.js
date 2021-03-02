@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState } from 'react';
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
 import {PaperTypeContext} from "@/js/quiz-form/contexts/paperTypeContext";
 
@@ -20,37 +20,42 @@ export default function PaperChooseColorful() {
         setData({
             ...data,
             how_many_colorful_pages: e.target.value,
-            is_colorful_pages: !!e.target.value,
+            is_colorful_pages: !!e.target.value.toString().length,
             colorful_pages_order: 'Вразброс'
         })
         setColorfulHighlighted(false)
 
     }
 
-    function openColorfulSettings() {
+    function openColorfulOrder() {
         setPCChooserVisible(!isPCChooserVisible)
+
+    }
+
+    function openColorfulSettings() {
+        setColorful(!isColorful)
         setData({
             ...data,
-            is_colorful_pages: !data.is_colorful_pages,
+            is_colorful_pages: !!data.is_colorful_pages,
         })
     }
 
     return (
         <div className={`is-cp ${(data.paper_type === 'melovan' || data.paper_type === 'offset') ? '--open' : ''}`}>
             <label className="is-cp__title">
-                <input type="checkbox" onClick={() => setColorful(!isColorful)}/>
+                <input type="checkbox" onClick={openColorfulSettings}/>
                 <span>Есть ли цветные страницы внутри?</span>
             </label>
             <div className={`is-cp__data ${isColorful ? '--open' : ''}`}>
-                <label className="is-cp__quantity">
+                <label className="is-cp__section --quantity is-cp__quantity">
                     <p className="is-cp__quantity-title">Количество страниц:</p>
                     <div className="quiz-input-box">
                         <input type="text" onChange={setQuantityOfColorfulPages} className={`${isColorfulHighlighted ? '--required' : ''}`}/>
                         <span>стр.</span>
                     </div>
                 </label>
-                <label htmlFor="" className="quiz-select">
-                    <div className="quiz-select__current" onClick={openColorfulSettings}>
+                <label htmlFor="" className="is-cp__section quiz-select">
+                    <div className="quiz-select__current" onClick={openColorfulOrder}>
                         { data.colorful_pages_order ? data.colorful_pages_order : 'Вразброс' }
                         <div className={`quiz-select__arrow-indicator ${isPCChooserVisible ? '--active' : ''}`}/>
                     </div>

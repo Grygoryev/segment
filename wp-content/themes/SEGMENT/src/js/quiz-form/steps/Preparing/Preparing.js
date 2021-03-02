@@ -2,11 +2,13 @@ import React, {useContext, useState, useEffect} from 'react'
 import {StateContext} from "@/js/quiz-form/contexts/stateContext";
 import Header from "@/js/quiz-form/components/Header";
 import StepButtons from "@/js/quiz-form/components/StepButtons";
+import PainterService from "@/js/quiz-form/steps/Preparing/PainterService";
+import {BookPreparingContext} from "@/js/quiz-form/contexts/bookPreparingContext";
 
 const Preparing = () => {
     let {setStep} = useContext(StateContext);
     let {data, setData} = useContext(StateContext);
-    let [localAnswers, setLocalAnswers] = useState([])
+    let {localAnswers, setLocalAnswers, highlightPagesQuantity} = useContext(BookPreparingContext)
 
     let handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +20,9 @@ const Preparing = () => {
 
         if (!localAnswers.length) {
             alert('Для продолжения нужно выбрать один из вариантов')
+        } else if (localAnswers.find(item => item === 'painter_uslugi') && !data.how_many_painter_illustrations) {
+            alert('Пожалуйста, введите число страниц с иллюстрациями от художника')
+            highlightPagesQuantity(true)
         } else {
             setStep(6)
         }
@@ -54,7 +59,16 @@ const Preparing = () => {
                         </label>
                         <label className="preparing__input-box">
                             <input onChange={handleChooze} type="checkbox" value="painter_uslugi"/>
-                            <span>Услуги художника</span>
+                            <span>Услуги художника-иллюстратора</span>
+                        </label>
+                        <PainterService />
+                        <label className="preparing__input-box">
+                            <input onChange={handleChooze} type="checkbox" value="cover_design"/>
+                            <span>Дизайн обложки</span>
+                        </label>
+                        <label className="preparing__input-box">
+                            <input onChange={handleChooze} type="checkbox" value="isbn_registration"/>
+                            <span>Присвоение <a href="https://g.co/kgs/o3mrjD">ISBN</a> номера</span>
                         </label>
                         <label className="preparing__input-box">
                             <input onChange={handleChooze} type="checkbox" value="none"/>

@@ -117,7 +117,7 @@ const SendData = () => {
                             <p>
                                 Нажимая на кнопку "Получить расчёт" вы принимаете
                             </p>
-                            <a href={segmentData.themeUrl + '/resources/privacy_agreement.docx'}>&nbsp; условия обработки персональных данных</a>
+                            <a href={segmentData.themeUrl + '/resources/privacy_agreement.docx'}> условия обработки персональных данных</a>
                         </div>
                     </div>
                 </fieldset>

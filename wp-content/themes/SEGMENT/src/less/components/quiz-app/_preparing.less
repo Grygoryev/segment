@@ -3,21 +3,27 @@
   &__container
   {
     .mintablet({
-      .flex(flex-start, center);
+      .flex(flex-start, center, row nowrap);
     });
   }
 
   &__img-box
   {
     text-align: center;
+    margin: 10px auto 20px;
 
     img
     {
       width: 100%;
+      max-width: 320px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .mintablet({
       width: 60%;
+      max-width: 400px;
     });
   }
 
@@ -37,5 +43,16 @@
     .flex_column();
     align-items: flex-start;
     margin-bottom: 15px;
+
+    .mintablet({
+      width: 45%;
+    });
+  }
+
+  .quiz-select__current {
+    text-align: left;
+    padding-left: 20px;
   }
 }
+
+/* ppo = painter preparing options */

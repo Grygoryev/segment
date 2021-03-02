@@ -1,6 +1,9 @@
 .quiz-form-benefits
 {
   .flex(space-between, stretch);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1150px;
 
   .mintablet({
     margin-bottom: 50px;
@@ -11,44 +14,70 @@
   color: @color-black;
   position: relative;
   margin: 0 auto 25px;
+  background: rgba(@color-ocean, 0.05);
+  padding: 10px;
+  box-shadow: 0 0 32px 6px rgba(#444242, 0.15);
+  border-radius: 10px;
+  width: 100%;
+
+  .minmablet({
+    width: 30%;
+  });
 
   &.--order {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 
     .mintablet({
       margin-bottom: 25px;
     })
   }
 
-  &__container {
-    .flex(space-between, center, row nowrap);
-    box-shadow: 0 0 32px 6px rgba(#444242, 0.15);
-    padding: 10px 20px;
-    background-color: @color-white;
+  &__container-wrapper {
+    border: 5px solid @color-ocean;
+    padding: 1px;
+    background: inherit;
     height: 100%;
-    border: 5px double @color-ocean;
-    border-radius: 10px;
   }
 
-  .mintablet({
-    width: 30%;
-  });
-
-  .minmablet({
-    width: 32%;
-  });
+  &__container {
+    .flex(space-between, center, row nowrap);
+    height: 100%;
+    border: 1px solid @color-ocean;
+    padding: 20px 20px 20px 0;
+  }
 
   &__section
   {
-    flex-basis: 70%;
     padding-left: 20px;
 
     &.--img
     {
       padding-left: 0;
-      flex-basis: 30%;
+      width: 30%;
+      position: relative;
       flex-grow: 0;
       flex-shrink: 0;
+
+      img {
+        position: absolute;
+        top: calc(50% - 18px);
+        left: -11px;
+        transform: translateY(-50%);
+        width: 160px;
+
+        &.--tetka {
+
+        }
+
+        &.--kniga {
+          top: calc(50% + 15px);
+          left: -15px;
+        }
+
+        &.--podarok {
+          top: 50%;
+        }
+      }
     }
 
     p {

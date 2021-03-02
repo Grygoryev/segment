@@ -78,6 +78,10 @@ function replaceKey(key) {
             return key = 'Порядок цветных страниц'
         case 'book_preparing_before_painting':
             return key = 'Допечатная подготовка книги'
+        case 'how_many_painter_illustrations':
+            return key = 'Количество иллюстраций художника'
+        case 'size_of_painter_illustrations':
+            return key = 'Размер иллюстраций художника'
         case 'user_name':
             return key = 'Имя пользователя'
         case 'user_phone':
