@@ -13,4 +13,9 @@ function App() {
 
 if (document.getElementById('quiz')) {
     render(<App/>, document.getElementById('quiz'))
+
+    let headerHeight = document.getElementById('header').offsetHeight
+    let formWrap = document.getElementById('quiz-form')
+
+    formWrap.style.paddingTop = headerHeight * 1.2 + 'px'
 }

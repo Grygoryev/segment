@@ -101,7 +101,7 @@ const SendData = () => {
                         <textarea name="user_comment" type="text" rows="6" onChange={onInput}/>
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset className="send-data__your-gift">
                     <div className="send-data__gift-box">
                         <div className="send-data__gift-suptitle">Ваш подарок:</div>
                         <div className="send-data__gift">
@@ -115,9 +115,9 @@ const SendData = () => {
                         <input type="checkbox" defaultChecked/>
                         <div className="send-data__privacy-text">
                             <p>
-                                Нажимая на кнопку "Получить расчёт" вы принимаете
+                                Нажимая на кнопку "Получить расчёт" вы принимаете&nbsp;
                             </p>
-                            <a href={segmentData.themeUrl + '/resources/privacy_agreement.docx'}> условия обработки персональных данных</a>
+                            <a href={segmentData.themeUrl + '/resources/privacy_agreement.docx'}>условия обработки персональных данных</a>
                         </div>
                     </div>
                 </fieldset>

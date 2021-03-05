@@ -53,7 +53,7 @@
                                 ?>
 
 								class="intro__btn-box --calculate link"
-								data-go-to="quiz"
+								data-go-to="quiz-form"
 							>
 								<div class="btn">
 									<div class="btn__title">

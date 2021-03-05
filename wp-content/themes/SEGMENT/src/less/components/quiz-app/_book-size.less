@@ -24,10 +24,12 @@
         position: relative;
         width: 46%;
 
-        .mintablet({
+        @media (min-width: 550px) {
             width: 23%;
             margin: 0 0 20px;
-        });
+            max-width: 185px;
+        }
+
 
         &-label {
             position: absolute;
@@ -42,22 +44,33 @@
         img 
         {
             width: 100%;
-            max-width: 70%;
             margin-left: auto;
             margin-right: auto;
             display: block;
         }
 
+        &.--custom {
+            img {
+                max-width: 140px;
+            }
+        }
+
+        &.--A4 {
+            img {
+                max-width: 150px;
+            }
+        }
+
         &.--A5 {
 
             img {
-                max-width: 60%;
+                max-width: 130px;
             }
         }
 
         &.--A6 {
             img {
-                max-width: 50%;
+                max-width: 100px;
             }
         }
     }
@@ -66,6 +79,7 @@
     {
         padding: 20px 0;
         .flex(center, center, row nowrap);
+        height: 100%;
     }
 
     &__footer

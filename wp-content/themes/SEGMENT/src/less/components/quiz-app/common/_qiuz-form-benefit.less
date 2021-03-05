@@ -19,8 +19,9 @@
   box-shadow: 0 0 32px 6px rgba(#444242, 0.15);
   border-radius: 10px;
   width: 100%;
+  min-height: 137px;
 
-  .minmablet({
+  .mintablet({
     width: 30%;
   });
 
@@ -66,16 +67,19 @@
         width: 160px;
 
         &.--tetka {
-
+          min-width: 95px;
         }
 
         &.--kniga {
-          top: calc(50% + 15px);
-          left: -15px;
+          top: calc(50% + 5px);
+          left: -30px;
+          min-width: 110px;
         }
 
         &.--podarok {
-          top: 50%;
+          top: calc(50% + 5px);
+          left: -20px;
+          min-width: 80px;
         }
       }
     }

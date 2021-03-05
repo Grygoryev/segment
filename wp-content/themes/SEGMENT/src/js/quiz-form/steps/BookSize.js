@@ -103,7 +103,7 @@ const BookSize = () => {
                             <h5 className=""><span>A5</span> 145x205 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz-card">
+                    <label className="book-size__item quiz-card --A4">
                         <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A4.png"} title="" alt="" />
                         </div>
@@ -112,7 +112,7 @@ const BookSize = () => {
                             <h5 className=""><span>A4</span> 210x297 </h5>
                         </div>
                     </label>
-                    <label className="book-size__item quiz-card">
+                    <label className="book-size__item quiz-card --custom">
                         <div className="book-size__item-body">
                             <img src={segmentData.themeUrl + "/img/quiz/A.png"} title="" alt="" />
                         </div>

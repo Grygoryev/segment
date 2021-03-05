@@ -68,7 +68,8 @@ const Preparing = () => {
                         </label>
                         <label className="preparing__input-box">
                             <input onChange={handleChooze} type="checkbox" value="isbn_registration"/>
-                            <span>Присвоение <a href="https://g.co/kgs/o3mrjD">ISBN</a> номера</span>
+                            {/*<span>Присвоение <a href="https://g.co/kgs/o3mrjD">ISBN</a> номера</span>*/}
+                            <span>Присвоение ISBN номера</span>
                         </label>
                         <label className="preparing__input-box">
                             <input onChange={handleChooze} type="checkbox" value="none"/>

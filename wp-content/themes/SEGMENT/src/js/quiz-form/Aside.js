@@ -9,7 +9,7 @@ const Aside = () => {
         giftImg
 
     if (step === 7) {
-        giftTitle = <p><span>Ваш</span> <br/> подарок:</p>
+        giftTitle = <p><span>Ваш</span> подарок:</p>
         giftImg = <img src={segmentData.themeUrl + "/img/quiz/ibsn.png"} alt=""/>
     } else {
         giftTitle = <>По завершении формы <br/> вы получите:</>
@@ -19,7 +19,7 @@ const Aside = () => {
     return (
         <React.Fragment>
           <aside className="quiz-aside --quiz-bordered">
-              <img src={segmentData.themeUrl + "/img/quiz/director.png"} alt=""/>
+              <img className="quiz-aside__director-img" src={segmentData.themeUrl + "/img/quiz/director.png"} alt=""/>
               <h4>Дмитрий Сакович</h4>
               <p className="quiz-aside__signature">
                   Директор издательского дома

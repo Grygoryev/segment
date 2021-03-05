@@ -1,5 +1,14 @@
 .cover-type {
 
+  &__options {
+    .flex(center, flex-start, row wrap);
+
+    .mindesktop-sm({
+      flex-wrap: wrap;
+      justify-content: center;
+    });
+  }
+
   &__option-title
   {
     .font(24px, 32px);
@@ -36,8 +45,10 @@
     width: 40%;
 
     .mintablet({
+      width: 20%;
       margin-left: 10px;
       margin-right: 10px;
+      min-width: 115px;
     });
 
     img 
